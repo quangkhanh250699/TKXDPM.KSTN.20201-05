@@ -2,13 +2,13 @@ package datalayer.model;
 
 public class Bike {
 
-    private String BikeId;
+    private int bikeId;
     private String bikeName;
     private String info;
     private int stationId;
 
-    public Bike(String bikeId, String bikeName) {
-        BikeId = bikeId;
+    public Bike(int bikeId, String bikeName) {
+        this.bikeId = bikeId;
         this.bikeName = bikeName;
     }
     public Bike(int bikeId, String bikeName, String info, int stationId) {
@@ -22,8 +22,8 @@ public class Bike {
         return stationId;
     }
 
-    public String getBikeId() {
-        return BikeId;
+    public int getBikeId() {
+        return bikeId;
     }
 
     public String getBikeName() {
