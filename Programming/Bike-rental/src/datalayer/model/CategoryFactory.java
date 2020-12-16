@@ -25,6 +25,7 @@ public class CategoryFactory {
             Category category = categoryAccessor.get(categoryId);
             categories.put(categoryId, category);
         }
+
         return categories.get(categoryId);
     }
 }

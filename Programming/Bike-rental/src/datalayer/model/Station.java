@@ -1,19 +1,30 @@
 package datalayer.model;
 
+import datalayer.acessor.BikeAccessor;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Station {
 
-    private String stationId;
+    private int stationId;
     private String stationName;
     private String address;
     private List<Bike> bikes;
     private String imagePath;
 
+    public Station(int stationId, String stationName, String address, String imagePath) {
+        this.stationId = stationId;
+        this.stationName = stationName;
+        this.address = address;
+        this.imagePath = imagePath;
 
-    public String getStationId() {
+        BikeAccessor bikeAccessor = new BikeAccessor();
+        this.bikes = bikeAccessor.getByStationId(stationId);
+    }
+
+    public int getStationId() {
         return stationId;
     }
     
@@ -31,5 +42,15 @@ public class Station {
 
     public String getImagePath() {
         return imagePath;
+    }
+
+    @Override
+    public String toString() {
+        return "Station{" +
+                "stationId=" + this.stationId +
+                ", stationName='" + this.stationName + '\'' +
+                ", address='" + this.address + '\'' +
+                ", imagePath='" + this.imagePath + '\'' +
+                '}';
     }
 }
