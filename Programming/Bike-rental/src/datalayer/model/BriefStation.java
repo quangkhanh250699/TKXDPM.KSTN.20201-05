@@ -1,16 +1,15 @@
 package datalayer.model;
 
 public class BriefStation {
+
     private int stationId;
     private String stationName;
     private String imagePath;
-    private String address;
 
-    public BriefStation(int stationId, String stationName, String address) {
+    public BriefStation(int stationId, String stationName, String imagePath) {
         this.stationId = stationId;
         this.stationName = stationName;
-//        this.imagePath = imagePath;
-        this.address = address;
+        this.imagePath = imagePath;
     }
 
     public int getStationId() {
@@ -25,7 +24,12 @@ public class BriefStation {
         return imagePath;
     }
 
+    @Override
     public String toString() {
-        return this.stationName + " ở " +  this.address;
+        return "BriefStation{" +
+                "stationId=" + stationId +
+                ", stationName='" + stationName + '\'' +
+                ", imagePath='" + imagePath + '\'' +
+                '}';
     }
 }

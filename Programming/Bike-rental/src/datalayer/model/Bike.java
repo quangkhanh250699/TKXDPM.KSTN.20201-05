@@ -2,18 +2,13 @@ package datalayer.model;
 
 public class Bike {
 
-    private int bikeId;
+    private String BikeId;
     private String bikeName;
     private String info;
-
-    public int getStationId() {
-        return stationId;
-    }
-
     private int stationId;
 
-    public Bike(int bikeId, String bikeName) {
-        this.bikeId = bikeId;
+    public Bike(String bikeId, String bikeName) {
+        BikeId = bikeId;
         this.bikeName = bikeName;
     }
     public Bike(int bikeId, String bikeName, String info, int stationId) {
@@ -23,19 +18,20 @@ public class Bike {
         this.info = info;
     }
 
+    public int getStationId() {
+        return stationId;
+    }
 
-
-    public int getBikeId() {
-        return bikeId;
+    public String getBikeId() {
+        return BikeId;
     }
 
     public String getBikeName() {
         return bikeName;
     }
 
+    @Override
     public String toString() {
         return "Xe đạp số " + this.bikeId + ": " +  this.bikeName + ". Barcode: " + this.bikeId;
     }
-
-
 }

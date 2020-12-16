@@ -1,22 +1,34 @@
 package datalayer.model;
 
-import java.util.List;
+import java.sql.*;
+import java.util.ArrayList;
 
-public class Station extends BriefStation {
+public class Station {
 
+    private String stationId;
+    private String stationName;
     private String address;
+    private List<Bike> bikes;
+    private String imagePath;
 
+
+    public String getStationId() {
+        return stationId;
+    }
+    
     public List<Bike> getBikes() {
         return bikes;
     }
-
-    private List<Bike> bikes;
-
-    public Station(int stationId, String stationName, String imagePath, String address, List<Bike> bikes) {
-        super(stationId, stationName, imagePath);
-        this.address = address;
-        this.bikes = bikes;
+  
+    public String getStationName() {
+        return stationName;
     }
 
+    public String getAddress() {
+        return address;
+    }
 
+    public String getImagePath() {
+        return imagePath;
+    }
 }
