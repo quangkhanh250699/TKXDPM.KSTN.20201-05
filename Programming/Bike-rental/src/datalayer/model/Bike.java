@@ -6,6 +6,8 @@ public class Bike {
     private String bikeName;
     private String info;
     private int stationId;
+    private float pin;
+
     private Category category;
 
     public Bike(int bikeId, String bikeName, String info, int stationId) {
@@ -15,12 +17,25 @@ public class Bike {
         this.info = info;
     }
 
-    public Bike(int bikeId, String bikeName, String info, int stationId, Category category) {
+    public Bike(int bikeId, String bikeName, String info, int stationId, float pin, Category category) {
         this.bikeId = bikeId;
         this.bikeName = bikeName;
         this.info = info;
         this.stationId = stationId;
+        this.pin = pin;
         this.category = category;
+    }
+
+    public String getInfo() {
+        return info;
+    }
+
+    public float getPin() {
+        return pin;
+    }
+
+    public Category getCategory() {
+        return category;
     }
 
     public int getStationId() {
