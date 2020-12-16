@@ -1,6 +1,4 @@
-
 package presentationlayer;
 
-public class HomeBoundary {
-
+public class BikeRentedList {
 }

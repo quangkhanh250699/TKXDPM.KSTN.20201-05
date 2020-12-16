@@ -5,7 +5,7 @@ import datalayer.model.BriefStation;
 import java.util.List;
 
 public class HomeController {
-    public List<BriefStation> getBriefStations() {
+    public static List<BriefStation> getBriefStations() {
         return null;
     }
 }
