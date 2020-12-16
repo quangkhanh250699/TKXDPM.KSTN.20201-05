@@ -5,11 +5,14 @@ import datalayer.model.RentedBike;
 import java.sql.Timestamp;
 
 public class ReturnBikeController {
-    public void requestReturnBike(RentedBike bike) {
-        return;
+
+    private CostComputer calculator;
+
+    public ReturnBikeController() {
+        this.calculator = new SimpleCostCalculator();
     }
 
-    public float calculateCost(RentedBike rentedBike, Timestamp endTime) {
-        return 0;
+    public void requestReturnBike(RentedBike bike) {
+        return;
     }
 }
