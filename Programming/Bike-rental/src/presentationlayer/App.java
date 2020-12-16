@@ -1,5 +1,6 @@
 package presentationlayer;
 
+import datalayer.model.Bike;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -20,8 +21,6 @@ public class App extends Application {
         instance = this;
         guiStage = stage;
         display_HomeScreen();
-//        display(STATION_DETAIL);
-
     }
 
     public static void main(String[] args) {
@@ -35,6 +34,7 @@ public class App extends Application {
         guiStage.setScene(scene);
         guiStage.show();
     }
+
     public  void display_HomeScreen() {
         try {
             display("HomeScreen.fxml");
@@ -44,7 +44,7 @@ public class App extends Application {
     }
 
 
-    public static void display_StationDetail(int id) throws IOException {
+    public static void display_StationDetailScreen(int id) throws IOException {
         FXMLLoader loader = new FXMLLoader(instance.getClass().getResource("StationDetailScreen.fxml"));
         root = loader.load();
         StationDetailScreen controller = loader.getController();
@@ -54,17 +54,14 @@ public class App extends Application {
         guiStage.show();
     }
 
-    public static App getInstance() {
-        return instance;
-    }
-
-    public static Parent getParent() {
-        return root;
-    }
-
-
-    public void display_ViewBikeScreen() {
-
+    public void display_ViewBikeScreen(int stationId, Bike bike) throws IOException {
+        FXMLLoader loader = new FXMLLoader(instance.getClass().getResource("ViewBikeScreen.fxml"));
+        root = loader.load();
+        ViewBikeScreen controller = loader.getController();
+        controller.initData(stationId, bike);
+        Scene scene = new Scene(root);
+        guiStage.setScene(scene);
+        guiStage.show();
     }
 
 
@@ -90,5 +87,12 @@ public class App extends Application {
 
     public void display_BikeRentedList () {
 
+    }
+    public static App getInstance() {
+        return instance;
+    }
+
+    public static Parent getParent() {
+        return root;
     }
 }

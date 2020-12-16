@@ -39,6 +39,6 @@
             <Image url="@../resources/images/bike_station1.jpeg" />
          </image>
       </ImageView>
-      <ListView fx:id="list" layoutX="439.0" layoutY="289.0" onMouseClicked="#handleMouseClick" prefHeight="253.0" prefWidth="658.0" />
+      <ListView fx:id="list" layoutX="439.0" layoutY="289.0" onMouseClicked="#viewStationDetail" prefHeight="253.0" prefWidth="658.0" />
    </children>
 </AnchorPane>
