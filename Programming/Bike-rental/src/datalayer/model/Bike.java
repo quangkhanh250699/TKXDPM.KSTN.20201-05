@@ -2,17 +2,17 @@ package datalayer.model;
 
 public class Bike {
 
-    private String bikeId;
+    private int bikeId;
     private String bikeName;
     private String info;
     private int stationId;
 
-    public Bike(String bikeId, String bikeName) {
+    public Bike(int bikeId, String bikeName) {
         this.bikeId = bikeId;
         this.bikeName = bikeName;
     }
 
-    public String getBikeId() {
+    public int getBikeId() {
         return bikeId;
     }
 

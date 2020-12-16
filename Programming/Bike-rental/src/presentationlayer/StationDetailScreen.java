@@ -10,17 +10,17 @@ import javafx.scene.control.SelectionMode;
 
 import java.io.IOException;
 
-public class StationDetailBoundary {
+public class StationDetailScreen {
     @FXML
     ListView<Bike> list;
 
 
-    public String getStationID() {
+    public int getStationID() {
         return stationID;
     }
 
-    String stationID;
-    public void setStationID(String stationID) {
+    int stationID;
+    public void setStationID(int stationID) {
         this.stationID = stationID;
     }
 
@@ -42,17 +42,17 @@ public class StationDetailBoundary {
     }
 
     public void goBack(ActionEvent actionEvent) {
-        GUI.getInstance().display(GUI.HOME);
+        App.getInstance().display_HomeScreen();
     }
 
-    public void initData(String stationID) {
-        Bike  tmp1 = new Bike("bike001", "xe dap tinh yeu");
-        Bike  tmp2 = new Bike("bike002", "xe dap may man");
-        Bike  tmp3 = new Bike("bike003", "xe dap tinh yeu");
-        Bike  tmp4 = new Bike("bike004", "xe dap tinh yeu");
+    public void initData(int stationID) {
+        Bike  tmp1 = new Bike(stationID, "xe dap tinh yeu");
+        Bike  tmp2 = new Bike(stationID, "xe dap may man");
+        Bike  tmp3 = new Bike(stationID, "xe dap tinh yeu");
+        Bike  tmp4 = new Bike(stationID, "xe dap tinh yeu");
 
-        this.setStationID(stationID);
-        ObservableList<Bike> items = FXCollections.observableArrayList(tmp1, tmp3, tmp2, tmp4);
+//        this.setStationID(stationID);
+        ObservableList<Bike> items = FXCollections.observableArrayList(tmp1, tmp2, tmp3, tmp4);
         list.setItems(items);
 
 //        ArrayList<Bike> bikes = StationController.requestStationDetail(stationID);
