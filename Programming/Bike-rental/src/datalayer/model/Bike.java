@@ -6,16 +6,21 @@ public class Bike {
     private String bikeName;
     private String info;
     private int stationId;
+    private Category category;
 
-    public Bike(int bikeId, String bikeName) {
-        this.bikeId = bikeId;
-        this.bikeName = bikeName;
-    }
     public Bike(int bikeId, String bikeName, String info, int stationId) {
         this.bikeId = bikeId;
         this.bikeName = bikeName;
         this.stationId = stationId;
         this.info = info;
+    }
+
+    public Bike(int bikeId, String bikeName, String info, int stationId, Category category) {
+        this.bikeId = bikeId;
+        this.bikeName = bikeName;
+        this.info = info;
+        this.stationId = stationId;
+        this.category = category;
     }
 
     public int getStationId() {
