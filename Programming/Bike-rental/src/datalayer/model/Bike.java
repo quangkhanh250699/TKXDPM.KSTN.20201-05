@@ -2,16 +2,48 @@ package datalayer.model;
 
 public class Bike {
 
-    private String BikeId;
+    private int bikeId;
     private String bikeName;
+    private String info;
+    private int stationId;
+    private float pin;
 
-    public Bike(String bikeId, String bikeName) {
-        BikeId = bikeId;
+    private Category category;
+
+    public Bike(int bikeId, String bikeName, String info, int stationId) {
+        this.bikeId = bikeId;
         this.bikeName = bikeName;
+        this.stationId = stationId;
+        this.info = info;
     }
 
-    public String getBikeId() {
-        return BikeId;
+    public Bike(int bikeId, String bikeName, String info, int stationId, float pin, Category category) {
+        this.bikeId = bikeId;
+        this.bikeName = bikeName;
+        this.info = info;
+        this.stationId = stationId;
+        this.pin = pin;
+        this.category = category;
+    }
+
+    public String getInfo() {
+        return info;
+    }
+
+    public float getPin() {
+        return pin;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public int getStationId() {
+        return stationId;
+    }
+
+    public int getBikeId() {
+        return bikeId;
     }
 
     public String getBikeName() {
@@ -20,9 +52,6 @@ public class Bike {
 
     @Override
     public String toString() {
-        return "Bike{" +
-                "BikeId='" + BikeId + '\'' +
-                ", bikeName='" + bikeName + '\'' +
-                '}';
+        return "Xe đạp số " + this.bikeId + ": " +  this.bikeName + ". Barcode: " + this.bikeId;
     }
 }

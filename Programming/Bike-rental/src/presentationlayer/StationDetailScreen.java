@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
+import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
 
@@ -46,18 +47,28 @@ public class StationDetailScreen {
     }
 
     public void initData(int stationID) {
-        Bike  tmp1 = new Bike(stationID, "xe dap tinh yeu");
-        Bike  tmp2 = new Bike(stationID, "xe dap may man");
-        Bike  tmp3 = new Bike(stationID, "xe dap tinh yeu");
-        Bike  tmp4 = new Bike(stationID, "xe dap tinh yeu");
+        /* ------- Code get data from controller ------
+        Station station = StationController.getStation(stationID);
+        List<Bike> bikes = station.getBikes();
+        ObservableList<Bike> items = FXCollections.observableArrayList(bikes);
+        list.setItems(items);
+        list.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+        */
+        /* ------- Code fake data --------------------- */
+        Bike  tmp1 = new Bike(stationID, "xe dap tinh yeu", null, 0);
+        Bike  tmp2 = new Bike(5, "xe dap may man",null, 0);
+        Bike  tmp3 = new Bike(5, "xe dap tinh yeu", null, 0);
+        Bike  tmp4 = new Bike(5, "xe dap tinh yeu", null, 0);
 
-//        this.setStationID(stationID);
         ObservableList<Bike> items = FXCollections.observableArrayList(tmp1, tmp2, tmp3, tmp4);
         list.setItems(items);
-
-//        ArrayList<Bike> bikes = StationController.requestStationDetail(stationID);
-//        ObservableList<Bike> items = FXCollections.observableArrayList(bikes);
-//        list.setItems(items);
         list.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+    }
+
+    public void handleClickOnListBike(MouseEvent mouseEvent) throws IOException {
+        /* -------- Code get data from controller --- */
+        Bike bike = list.getSelectionModel().getSelectedItem();
+        App.getInstance().display_ViewBikeScreen(stationID, bike);
+        /* -------- Code fake data ------------------ */
     }
 }
