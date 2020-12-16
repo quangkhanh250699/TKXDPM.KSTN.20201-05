@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="830.0" prefWidth="1330.0" styleClass="root" stylesheets="@/resources/styles/light.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentationlayer.HomeBoundary">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="830.0" prefWidth="1330.0" styleClass="root" stylesheets="@/resources/styles/light.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentationlayer.HomeScreen">
    <children>
       <ButtonBar layoutX="439.0" layoutY="234.0" prefHeight="40.0" prefWidth="200.0" />
       <HBox prefHeight="100.0" prefWidth="1330.0" style="-fx-background-color: aqua;">
