@@ -1,10 +1,6 @@
 package presentationlayer;
 
-import applicationlayer.HomeController;
-import applicationlayer.StationController;
-import datalayer.model.Bike;
 import datalayer.model.BriefStation;
-import datalayer.model.Station;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -14,8 +10,6 @@ import javafx.scene.control.SelectionMode;
 import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class HomeScreen {
     @FXML
@@ -28,8 +22,8 @@ public class HomeScreen {
 
     @FXML
     public void initialize() {
-        /* Code when merge
-        ArrayList<BriefStation> stations = (ArrayList<BriefStation>) HomeController.getBriefStations();
+        /* Code when merge ---
+        List<BriefStation> stations = HomeController.getBriefStations();
         ObservableList<BriefStation> items =  FXCollections.observableArrayList(stations);
         list.setItems(items);
         list.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
@@ -41,11 +35,12 @@ public class HomeScreen {
         ObservableList<BriefStation> items = FXCollections.observableArrayList(briefStation1, briefStation2, briefStation3);
         list.setItems(items);
         list.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+
     }
     @FXML
-    public void handleMouseClick(MouseEvent e) throws IOException {
+    public void viewStationDetail(MouseEvent e) throws IOException {
         BriefStation tmp = list.getSelectionModel().getSelectedItem();
         int stationId = tmp.getStationId();
-        App.getInstance().display_StationDetail(stationId);
+        App.getInstance().display_StationDetailScreen(stationId);
     }
 }
