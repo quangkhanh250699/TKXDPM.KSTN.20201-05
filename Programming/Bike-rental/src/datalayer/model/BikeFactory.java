@@ -52,16 +52,16 @@ public class BikeFactory {
         return bikesInStation;
     }
 
-    public List<Bike> getBikeRentByUserId(int userId){
-        List<Bike> bikes = bikeAccessor.getBikeRentByUserId(userId);
-        List<Bike> bikesRentByUser = new ArrayList<Bike>();
-        for(Bike bike: bikes){
-            if(!this.bikes.containsKey(bike.getBikeId())){
-                this.bikes.put(bike.getBikeId(), bike);
-            }
-            bikesRentByUser.add(this.bikes.get(bike.getBikeId()));
-        }
-        return bikesRentByUser;
-    }
+//    public List<Bike> getBikeRentByUserId(int userId){
+//        List<Bike> bikes = bikeAccessor.getBikeRentByUserId(userId);
+//        List<Bike> bikesRentByUser = new ArrayList<Bike>();
+//        for(Bike bike: bikes){
+//            if(!this.bikes.containsKey(bike.getBikeId())){
+//                this.bikes.put(bike.getBikeId(), bike);
+//            }
+//            bikesRentByUser.add(this.bikes.get(bike.getBikeId()));
+//        }
+//        return bikesRentByUser;
+//    }
 
 }
