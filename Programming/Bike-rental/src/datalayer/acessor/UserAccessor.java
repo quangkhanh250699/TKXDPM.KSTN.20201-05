@@ -1,8 +1,6 @@
 package datalayer.acessor;
 
-import datalayer.model.Category;
-import datalayer.model.Station;
-import datalayer.model.User;
+import datalayer.model.*;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -12,12 +10,14 @@ import java.util.List;
 public class UserAccessor extends DataAccessor<User>{
     @Override
     public User get(int id) {
-        String q = "SELECT * FROM station WHERE stationId = " + id;
+        String q = "SELECT * FROM user WHERE userId = " + id;
         User user = null;
         try{
             ResultSet rs = query(q);
+            BikeFactory bikeFactory = BikeFactory.getInstance();
             rs.next();
-            user = new User(id, rs.getString("name"));
+            List<Bike> bikesRent = bikeFactory.getBikeRentByUserId(id);
+            user = new User(id, rs.getString("name"), bikesRent);
 
         }catch(SQLException se){
             //Handle errors for JDBC
@@ -31,12 +31,14 @@ public class UserAccessor extends DataAccessor<User>{
 
     @Override
     public List<User> getAll() {
-        String q = "SELECT * FROM category" ;
+        String q = "SELECT * FROM user" ;
         List<User> users = new ArrayList<User>();
         try{
             ResultSet rs = query(q);
+            BikeFactory bikeFactory = BikeFactory.getInstance();
             while(rs.next()){
-                users.add(new User(rs.getInt("userId"), rs.getString("name")));
+                List<Bike> bikesRent = bikeFactory.getBikeRentByUserId(rs.getInt("userId"));
+                users.add(new User(rs.getInt("userId"), rs.getString("name"), bikesRent));
 
             }
         }catch(SQLException se){
