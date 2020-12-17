@@ -10,18 +10,16 @@ public class Station {
 
     private int stationId;
     private String stationName;
+    private String imagePath;
     private String address;
     private List<Bike> bikes;
-    private String imagePath;
 
-    public Station(int stationId, String stationName, String address, String imagePath) {
+    public Station(int stationId, String stationName, String imagePath, String address, List<Bike> bikes) {
         this.stationId = stationId;
         this.stationName = stationName;
-        this.address = address;
         this.imagePath = imagePath;
-
-        BikeAccessor bikeAccessor = new BikeAccessor();
-        this.bikes = bikeAccessor.getByStationId(stationId);
+        this.address = address;
+        this.bikes = bikes;
     }
 
     public int getStationId() {

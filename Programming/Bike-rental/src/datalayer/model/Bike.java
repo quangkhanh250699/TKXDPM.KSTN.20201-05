@@ -9,14 +9,12 @@ public class Bike {
     private boolean status;
     private Category category;
 
-    public Bike(int bikeId, String bikeName, int stationId, float pin, boolean status, int categoryId) {
+    public Bike(int bikeId, String bikeName, int stationId, float pin, boolean status, Category category) {
         this.bikeId = bikeId;
         this.bikeName = bikeName;
         this.stationId = stationId;
         this.pin = pin;
         this.status = status;
-        CategoryFactory categoryFactory = CategoryFactory.getInstance();
-        Category category = categoryFactory.getCategory(categoryId);
         this.category = category;
     }
 
