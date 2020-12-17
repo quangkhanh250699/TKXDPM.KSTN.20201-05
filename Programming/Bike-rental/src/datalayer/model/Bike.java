@@ -4,42 +4,18 @@ public class Bike {
 
     private int bikeId;
     private String bikeName;
-    private String info;
     private int stationId;
     private float pin;
-
+    private boolean status;
     private Category category;
 
-    public Bike(int bikeId, String bikeName, String info, int stationId) {
+    public Bike(int bikeId, String bikeName, int stationId, float pin, boolean status, Category category) {
         this.bikeId = bikeId;
         this.bikeName = bikeName;
-        this.stationId = stationId;
-        this.info = info;
-    }
-
-    public Bike(int bikeId, String bikeName, String info, int stationId, float pin, Category category) {
-        this.bikeId = bikeId;
-        this.bikeName = bikeName;
-        this.info = info;
         this.stationId = stationId;
         this.pin = pin;
+        this.status = status;
         this.category = category;
-    }
-
-    public String getInfo() {
-        return info;
-    }
-
-    public float getPin() {
-        return pin;
-    }
-
-    public Category getCategory() {
-        return category;
-    }
-
-    public int getStationId() {
-        return stationId;
     }
 
     public int getBikeId() {
@@ -48,6 +24,22 @@ public class Bike {
 
     public String getBikeName() {
         return bikeName;
+    }
+
+    public int getStationId() {
+        return stationId;
+    }
+
+    public float getPin() {
+        return pin;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public Category getCategory() {
+        return category;
     }
 
     @Override

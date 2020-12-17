@@ -21,8 +21,8 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "userId=" + userId +
-                ", name='" + name + '\'' +
+                "userId=" + this.userId +
+                ", name='" + this.name + '\'' +
                 '}';
     }
 }
