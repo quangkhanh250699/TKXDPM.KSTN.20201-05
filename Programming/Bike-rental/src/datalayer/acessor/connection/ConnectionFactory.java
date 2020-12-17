@@ -13,8 +13,8 @@ public class ConnectionFactory {
     static final String DB_URL = "jdbc:mysql://localhost:3306/bike_rental?autoReconnect=true&useSSL=false";
 
     //  Database credentials
-    static final String USER = "guest";
-    static final String PASS = "guest";
+    static final String USER = "quangkhanh";
+    static final String PASS = "12345678";
 
     public DBConnection getDBConnection(){
         MySQLConnection mySQLConnection = MySQLConnection.getInstance();
