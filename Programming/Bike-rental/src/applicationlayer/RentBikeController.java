@@ -2,6 +2,7 @@ package applicationlayer;
 
 import barcode.BarcodeProcessor;
 import barcode.BarcodeProcessorFactory;
+import checkout.CreditCard;
 import datalayer.acessor.BikeAccessor;
 import datalayer.model.Bike;
 
@@ -20,7 +21,7 @@ public class RentBikeController {
         return bikeAccessor.get(bikeId);
     }
 
-    public void requestRentBike(Bike bike) {
+    public void requestRentBike(Bike bike, CreditCard creditCard) {
         return;
     }
 }
