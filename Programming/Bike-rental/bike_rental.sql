@@ -64,8 +64,8 @@ create table if not exists bike_rental.`rent`(
     start_time timestamp default current_timestamp,
     end_time timestamp,
     constraint pk_rent primary key(rentId),
-    foreign key (userId) references bike_rental.User(userId),
-    foreign key (bikeId) references bike_rental.Bike(bikeId)
+    foreign key (userId) references bike_rental.user(userId),
+    foreign key (bikeId) references bike_rental.bike(bikeId)
 );
  
 -- insert data
