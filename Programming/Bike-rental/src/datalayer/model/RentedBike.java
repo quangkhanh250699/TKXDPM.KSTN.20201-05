@@ -2,12 +2,49 @@ package datalayer.model;
 
 import java.sql.Timestamp;
 
-public class RentedBike extends Bike {
-
-    private Timestamp startTime;
+public class RentedBike {
+    private  int rentId;
     private int userId;
+    private int bikeId;
+    private Timestamp start_time;
+    private Timestamp end_time;
 
-    public RentedBike(int bikeId, String bikeName) {
-        super(bikeId, bikeName);
+    public RentedBike(int rentId, int userId, int bikeId, Timestamp start_time, Timestamp end_time) {
+        this.rentId = rentId;
+        this.userId = userId;
+        this.bikeId = bikeId;
+        this.start_time = start_time;
+        this.end_time = end_time;
+    }
+
+    public int getRentId() {
+        return rentId;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public int getBikeId() {
+        return bikeId;
+    }
+
+    public Timestamp getStart_time() {
+        return start_time;
+    }
+
+    public Timestamp getEnd_time() {
+        return end_time;
+    }
+
+    @Override
+    public String toString() {
+        return "RentedBike{" +
+                "rentId=" + rentId +
+                ", userId=" + userId +
+                ", bikeId=" + bikeId +
+                ", start_time=" + start_time +
+                ", end_time=" + end_time +
+                '}';
     }
 }
