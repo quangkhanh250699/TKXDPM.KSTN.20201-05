@@ -15,4 +15,8 @@ public class ReturnBikeController {
     public void requestReturnBike(RentedBike bike) {
         return;
     }
+
+    public float calculateCost(RentedBike rentedBike, Timestamp endTime) {
+        return this.calculator.checkout(rentedBike, endTime);
+    }
 }
