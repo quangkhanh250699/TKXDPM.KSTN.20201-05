@@ -77,27 +77,27 @@ public class BikeAccessor extends DataAccessor<Bike>{
         return bikes;
     }
 
-    public List<Bike> getBikeRentByUserId(int userId){
-        String q = "SELECT bike.* FROM rent, bike where rent.bikeId = bike.bikeId and userId = " + userId;
-        List<Bike> bikes = new ArrayList<Bike>();
-        try{
-            ResultSet rs = query(q);
-            CategoryFactory categoryFactory = CategoryFactory.getInstance();
-            while(rs.next()){
-                Category category = categoryFactory.getCategoryById(rs.getInt("categoryId"));
-                bikes.add(new Bike(rs.getInt("bikeId"), rs.getString("bike_name"), rs.getInt("stationId"),
-                        rs.getFloat("pin"), rs.getBoolean("status"), category));
-
-            }
-        }catch(SQLException se){
-            //Handle errors for JDBC
-            se.printStackTrace();
-        }catch(Exception e){
-            //Handle errors for Class.forName
-            e.printStackTrace();
-        }
-        return bikes;
-    }
+//    public List<Bike> getBikeRentByUserId(int userId){
+//        String q = "SELECT bike.* FROM rent, bike where rent.bikeId = bike.bikeId and userId = " + userId;
+//        List<Bike> bikes = new ArrayList<Bike>();
+//        try{
+//            ResultSet rs = query(q);
+//            CategoryFactory categoryFactory = CategoryFactory.getInstance();
+//            while(rs.next()){
+//                Category category = categoryFactory.getCategoryById(rs.getInt("categoryId"));
+//                bikes.add(new Bike(rs.getInt("bikeId"), rs.getString("bike_name"), rs.getInt("stationId"),
+//                        rs.getFloat("pin"), rs.getBoolean("status"), category));
+//
+//            }
+//        }catch(SQLException se){
+//            //Handle errors for JDBC
+//            se.printStackTrace();
+//        }catch(Exception e){
+//            //Handle errors for Class.forName
+//            e.printStackTrace();
+//        }
+//        return bikes;
+//    }
 
     @Override
     public void update(Bike bike) {

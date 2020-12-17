@@ -6,15 +6,15 @@ public class User {
 
     private int userId;
     private String name;
-    private List<Bike> rentBikes;
+    private List<RentedBike> rentBikes;
 
-    public User(int userId, String name, List<Bike> rentBikes) {
+    public User(int userId, String name, List<RentedBike> rentBikes) {
         this.userId = userId;
         this.name = name;
         this.rentBikes = rentBikes;
     }
 
-    public List<Bike> getRentBikes() {
+    public List<RentedBike> getRentBikes() {
         return rentBikes;
     }
 
