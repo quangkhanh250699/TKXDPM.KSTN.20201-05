@@ -1,5 +1,6 @@
 package applicationlayer;
 
+import barcode.SimpleBarcodeProcessor;
 import datalayer.model.Bike;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -22,6 +23,10 @@ class RentBikeControllerTest {
 
     @Test
     void requestBike() {
-        Bike bike = rentBikeController.requestBike("1234");
+        String barcode = "1";
+        SimpleBarcodeProcessor processor = new SimpleBarcodeProcessor();
+        Bike bike = rentBikeController.requestBike(barcode);
+        int bikeId = processor.processBarcode(barcode);
+        assertEquals(bikeId, bike.getBikeId());
     }
 }
