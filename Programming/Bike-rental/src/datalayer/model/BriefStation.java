@@ -1,5 +1,9 @@
 package datalayer.model;
 
+import datalayer.acessor.BikeAccessor;
+
+import java.util.List;
+
 public class BriefStation {
 
     private int stationId;
@@ -16,6 +20,7 @@ public class BriefStation {
         return stationId;
     }
 
+
     public String getStationName() {
         return stationName;
     }
@@ -27,9 +32,9 @@ public class BriefStation {
     @Override
     public String toString() {
         return "BriefStation{" +
-                "stationId=" + stationId +
-                ", stationName='" + stationName + '\'' +
-                ", imagePath='" + imagePath + '\'' +
+                "stationId=" + this.stationId +
+                ", stationName='" + this.stationName + '\'' +
+                ", imagePath='" + this.imagePath + '\'' +
                 '}';
     }
 }

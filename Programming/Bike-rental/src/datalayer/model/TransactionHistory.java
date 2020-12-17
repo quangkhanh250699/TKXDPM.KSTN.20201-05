@@ -46,12 +46,12 @@ public class TransactionHistory {
     @Override
     public String toString() {
         return "TransactionHistory{" +
-                "transactionId=" + transactionId +
-                ", userId=" + userId +
-                ", total_payment=" + total_payment +
-                ", time=" + time +
-                ", bike_name='" + bike_name + '\'' +
-                ", rented_duration=" + rented_duration +
+                "transactionId=" + this.transactionId +
+                ", userId=" + this.userId +
+                ", total_payment=" + this.total_payment +
+                ", time=" + this.time +
+                ", bike_name='" + this.bike_name + '\'' +
+                ", rented_duration=" + this.rented_duration +
                 '}';
     }
 }

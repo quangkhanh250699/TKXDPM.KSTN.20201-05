@@ -44,12 +44,12 @@ public class Category {
     @Override
     public String toString() {
         return "Category{" +
-                "categoryId=" + categoryId +
-                ", name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                ", cost_per_hour=" + cost_per_hour +
-                ", n_pedals=" + n_pedals +
-                ", n_seats=" + n_seats +
+                "categoryId=" + this.categoryId +
+                ", name='" + this.name + '\'' +
+                ", description='" + this.description + '\'' +
+                ", cost_per_hour=" + this.cost_per_hour +
+                ", n_pedals=" + this.n_pedals +
+                ", n_seats=" + this.n_seats +
                 '}';
     }
 }

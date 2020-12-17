@@ -3,7 +3,7 @@ package barcode;
 public class SimpleBarcodeProcessor implements BarcodeProcessor {
 
     @Override
-    public String processBarcode(String barcode) {
-        return barcode;
+    public int processBarcode(String barcode) {
+        return Integer.parseInt(barcode);
     }
 }

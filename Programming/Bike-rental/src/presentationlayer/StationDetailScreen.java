@@ -55,14 +55,14 @@ public class StationDetailScreen {
         list.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
         */
         /* ------- Code fake data --------------------- */
-        Bike  tmp1 = new Bike(stationID, "xe dap tinh yeu", null, 0);
-        Bike  tmp2 = new Bike(5, "xe dap may man",null, 0);
-        Bike  tmp3 = new Bike(5, "xe dap tinh yeu", null, 0);
-        Bike  tmp4 = new Bike(5, "xe dap tinh yeu", null, 0);
-
-        ObservableList<Bike> items = FXCollections.observableArrayList(tmp1, tmp2, tmp3, tmp4);
-        list.setItems(items);
-        list.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+//        Bike  tmp1 = new Bike(stationID, "xe dap tinh yeu", null, 0);
+//        Bike  tmp2 = new Bike(5, "xe dap may man",null, 0);
+//        Bike  tmp3 = new Bike(5, "xe dap tinh yeu", null, 0);
+//        Bike  tmp4 = new Bike(5, "xe dap tinh yeu", null, 0);
+//
+//        ObservableList<Bike> items = FXCollections.observableArrayList(tmp1, tmp2, tmp3, tmp4);
+//        list.setItems(items);
+//        list.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
     }
 
     public void handleClickOnListBike(MouseEvent mouseEvent) throws IOException {

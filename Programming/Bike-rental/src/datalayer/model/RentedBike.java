@@ -40,11 +40,11 @@ public class RentedBike {
     @Override
     public String toString() {
         return "RentedBike{" +
-                "rentId=" + rentId +
-                ", userId=" + userId +
-                ", bikeId=" + bikeId +
-                ", start_time=" + start_time +
-                ", end_time=" + end_time +
+                "rentId=" + this.rentId +
+                ", userId=" + this.userId +
+                ", bikeId=" + this.bikeId +
+                ", start_time=" + this.start_time +
+                ", end_time=" + this.end_time +
                 '}';
     }
 }

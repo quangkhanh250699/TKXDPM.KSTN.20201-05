@@ -2,6 +2,6 @@ package checkout;
 
 public interface InterbankInterface {
     void payRental(CreditCard creditCard);
-    int getBalance(CreditCard creditCard);
-    void refund(CreditCard creditCard, int amount);
+    float getBalance(CreditCard creditCard);
+    void refund(CreditCard creditCard, float amount);
 }
