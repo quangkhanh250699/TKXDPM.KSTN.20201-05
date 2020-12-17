@@ -14,10 +14,10 @@ public class UserAccessor extends DataAccessor<User>{
         User user = null;
         try{
             ResultSet rs = query(q);
-            BikeFactory bikeFactory = BikeFactory.getInstance();
+            BikeRentedAccessor bikeRentedAccessor = new BikeRentedAccessor();
             rs.next();
-            List<Bike> bikesRent = bikeFactory.getBikeRentByUserId(id);
-            user = new User(id, rs.getString("name"), bikesRent);
+            List<RentedBike> rentedBikes = bikeRentedAccessor.getBikeRentByUserId(id);
+            user = new User(id, rs.getString("name"), rentedBikes);
 
         }catch(SQLException se){
             //Handle errors for JDBC
@@ -35,10 +35,10 @@ public class UserAccessor extends DataAccessor<User>{
         List<User> users = new ArrayList<User>();
         try{
             ResultSet rs = query(q);
-            BikeFactory bikeFactory = BikeFactory.getInstance();
+            BikeRentedAccessor bikeRentedAccessor = new BikeRentedAccessor();
             while(rs.next()){
-                List<Bike> bikesRent = bikeFactory.getBikeRentByUserId(rs.getInt("userId"));
-                users.add(new User(rs.getInt("userId"), rs.getString("name"), bikesRent));
+                List<RentedBike> rentedBikes = bikeRentedAccessor.getBikeRentByUserId(rs.getInt("userId"));
+                users.add(new User(rs.getInt("userId"), rs.getString("name"), rentedBikes));
 
             }
         }catch(SQLException se){
