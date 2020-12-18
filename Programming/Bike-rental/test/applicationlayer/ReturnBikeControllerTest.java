@@ -32,6 +32,6 @@ class ReturnBikeControllerTest {
                                             new Timestamp(2020, 12, 12, 12, 0, 0, 0),
                                             new Timestamp(2020, 12, 12, 13, 0, 0, 0));
         float cost = this.returnBikeController.calculateCost(bike, bike.getEnd_time());
-        assertEquals(1000, cost);
+        assertEquals(90000, cost);
     }
 }
