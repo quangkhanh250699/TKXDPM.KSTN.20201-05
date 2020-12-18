@@ -8,7 +8,6 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="830.0" prefWidth="1330.0" styleClass="root" stylesheets="@/resources/styles/light.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentationlayer.StationDetailScreen">
    <children>
@@ -17,26 +16,11 @@
          <children>
             <AnchorPane prefHeight="100.0" prefWidth="1330.0">
                <children>
-                  <Button id="round-red" layoutX="1164.0" layoutY="27.0" mnemonicParsing="false" onAction="#goViewRentedBikeScreen" prefHeight="46.0" prefWidth="140.0" style="-fx-background-color: #3cc985; -fx-border-radius: 5px;" stylesheets="@../resources/styles/style.css" text="View rented bike">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Button>
                   <ImageView fitHeight="100.0" fitWidth="184.0" layoutX="142.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../resources/images/logo.jpeg" />
                      </image>
                   </ImageView>
-                  <Button id="round-red" layoutX="472.0" layoutY="27.0" mnemonicParsing="false" onAction="#goReturnBikeScreen" prefHeight="46.0" prefWidth="140.0" style="-fx-background-color: #3cc985; -fx-border-radius: 5px;" stylesheets="@../resources/styles/style.css" text="Return Bike">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Button>
-                  <Button id="round-red" layoutX="816.0" layoutY="27.0" mnemonicParsing="false" onAction="#goRentBikeScreen" prefHeight="46.0" prefWidth="140.0" style="-fx-background-color: #3cc985; -fx-border-radius: 5px;" stylesheets="@../resources/styles/style.css" text="Rent Bike">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Button>
                </children>
             </AnchorPane>
          </children>
@@ -49,7 +33,7 @@
             <Image url="@../resources/images/bike_station1.jpeg" />
          </image>
       </ImageView>
-      <ListView fx:id="list" onMouseClicked="#handleClickOnListBike" layoutX="439.0" layoutY="289.0" prefHeight="253.0" prefWidth="658.0" />
+      <ListView fx:id="list" layoutX="439.0" layoutY="289.0" onMouseClicked="#goViewBikeScreen" prefHeight="253.0" prefWidth="658.0" />
       <Button layoutX="1207.0" layoutY="122.0" mnemonicParsing="false" onAction="#goBack" prefHeight="40.0" prefWidth="100.0" text="Back" />
    </children>
 </AnchorPane>
