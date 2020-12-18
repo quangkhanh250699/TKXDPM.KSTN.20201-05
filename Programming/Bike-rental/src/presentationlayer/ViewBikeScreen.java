@@ -41,17 +41,9 @@ public class ViewBikeScreen {
         this.setStationId(stationId);
 
         // Rent bike information
-        String bikeid = "Bike id: " + bike.getBikeId();
-        String bikename = "Bike name:  " + bike.getBikeName();
-        String pin = "Pin: " + bike.getPin();
-        String status =  bike.isStatus() ? "Trạng thái: Sẵn sàng" : "Trạng thái: Đang cho mượn";
-        String bikecategory = "Caterory: " + bike.getCategory().getName();
-        String description = "Description: " + bike.getCategory().getDescription();
-        String costPerHour = "Cost per hour: " + bike.getCategory().getCost_per_hour();
-        ObservableList<String> items = FXCollections.observableArrayList(bikeid, bikename, pin, status, bikecategory
-        , description, costPerHour);
-
-        list.setItems(items);
-        list.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+        RentBikeScreen.rentBikeData(bike, list);
     }
+
+
+
 }

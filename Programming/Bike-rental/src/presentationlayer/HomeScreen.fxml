@@ -39,7 +39,7 @@
          </image>
       </ImageView>
       <ListView fx:id="list" layoutX="439.0" layoutY="289.0" onMouseClicked="#goStationDetail" prefHeight="253.0" prefWidth="658.0" />
-      <Pane layoutX="447.0" layoutY="100.0" prefHeight="166.0" prefWidth="626.0">
+      <Pane layoutX="455.0" layoutY="100.0" prefHeight="178.0" prefWidth="626.0">
          <children>
             <Button id="round-red" layoutX="403.0" layoutY="117.0" mnemonicParsing="false" onAction="#goRentBikeScreen" prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: #3cc985; -fx-border-radius: 5px;" stylesheets="@../resources/styles/style.css" text="Rent bike" />
             <TextField fx:id="textField" layoutX="229.0" layoutY="117.0" />
@@ -48,6 +48,7 @@
                   <Font size="14.0" />
                </font>
             </Text>
+            <Text fx:id="invalidBarcode" fill="#c71313" layoutX="260.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" />
          </children>
       </Pane>
    </children>
