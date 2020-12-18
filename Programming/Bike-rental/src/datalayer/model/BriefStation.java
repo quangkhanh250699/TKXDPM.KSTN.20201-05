@@ -31,10 +31,6 @@ public class BriefStation {
 
     @Override
     public String toString() {
-        return "BriefStation{" +
-                "stationId=" + this.stationId +
-                ", stationName='" + this.stationName + '\'' +
-                ", imagePath='" + this.imagePath + '\'' +
-                '}';
+        return "Bãi xe số: " + this.stationId + ". Tên bãi xe: " + this.stationName;
     }
 }
