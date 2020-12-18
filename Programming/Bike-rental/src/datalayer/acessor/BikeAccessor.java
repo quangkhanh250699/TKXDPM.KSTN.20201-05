@@ -106,7 +106,6 @@ public class BikeAccessor extends DataAccessor<Bike>{
                         " , stationId = " + bike.getStationId()+
                         " , pin = " + bike.getPin() +
                         " , status = " + (bike.isStatus() ? 1 : 0) +
-                        " , categoryId = " + bike.getCategory().getCategoryId() +
                         " WHERE bikeId = " + bike.getBikeId();
         System.out.println(q);
         try{
