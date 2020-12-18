@@ -4,6 +4,7 @@ import checkout.exception.*;
 import org.json.JSONException;
 
 import java.io.IOException;
+import java.text.ParseException;
 
 public interface InterbankInterface {
     /**
@@ -19,7 +20,7 @@ public interface InterbankInterface {
      *                               something goes wrong
      */
     public abstract PaymentTransaction payRental(CreditCard card, int amount, String contents)
-            throws PaymentException, UnrecognizedException, IOException, JSONException;
+            throws PaymentException, UnrecognizedException, IOException, JSONException, ParseException;
 
     /**
      * Refund, and then return the payment transaction
@@ -34,5 +35,5 @@ public interface InterbankInterface {
      *                               something goes wrong
      */
     public abstract PaymentTransaction refund(CreditCard card, int amount, String contents)
-            throws PaymentException, UnrecognizedException, IOException, JSONException;
+            throws PaymentException, UnrecognizedException, IOException, JSONException, ParseException;
 }
