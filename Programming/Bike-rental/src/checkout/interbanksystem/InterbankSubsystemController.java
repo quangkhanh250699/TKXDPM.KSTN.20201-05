@@ -8,19 +8,19 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 public class InterbankSubsystemController {
     private InterbankBoundary interbankBoundary = new InterbankBoundary();
 
-    public PaymentTransaction payRental(CreditCard card, int amount, String contents) throws IOException, JSONException {
+    public PaymentTransaction payRental(CreditCard card, int amount, String contents) throws IOException, JSONException, ParseException {
         PaymentTransaction requestTransaction = new PaymentTransaction();
         requestTransaction.setCard(card);
         requestTransaction.setAmount(amount);
         requestTransaction.setTransactionContent(contents);
-        LocalDateTime now = LocalDateTime.now();
-        requestTransaction.setCreateAt(format((String.valueOf(now))));
+        requestTransaction.setCreateAt(new Date());
 
         String transactionRequest = getTransactionRequest(requestTransaction, "pay");
         JSONObject response = interbankBoundary.request(transactionRequest);
@@ -28,13 +28,12 @@ public class InterbankSubsystemController {
         return makePaymentTransaction(response);
     }
 
-    public PaymentTransaction refund(CreditCard card, int amount, String contents) throws IOException, JSONException {
+    public PaymentTransaction refund(CreditCard card, int amount, String contents) throws IOException, JSONException, ParseException {
         PaymentTransaction requestTransaction = new PaymentTransaction();
         requestTransaction.setCard(card);
         requestTransaction.setAmount(amount);
         requestTransaction.setTransactionContent(contents);
-        LocalDateTime now = LocalDateTime.now();
-        requestTransaction.setCreateAt(format((String.valueOf(now))));
+        requestTransaction.setCreateAt(new Date());
 
         String transactionRequest = getTransactionRequest(requestTransaction, "refund");
         JSONObject response = interbankBoundary.request(transactionRequest);
@@ -50,14 +49,14 @@ public class InterbankSubsystemController {
      * @throws PaymentException
      * @throws JSONException
      */
-    private PaymentTransaction makePaymentTransaction(JSONObject response) throws PaymentException, JSONException {
+    private PaymentTransaction makePaymentTransaction(JSONObject response) throws PaymentException, JSONException, ParseException {
         if (response == null)
             return null;
         JSONObject transaction = response.getJSONObject("transaction");
         CreditCard card = new CreditCard((String) transaction.get("cardCode"), (String) transaction.get("owner"),
                 (String) transaction.get("cvvCode"), (String) transaction.get("dateExpired"));
-        PaymentTransaction trans = new PaymentTransaction(Integer.parseInt((String) transaction.get("amount")), card,
-                (String) transaction.get("transactionContent"), (String) transaction.get("createdAt"));
+        PaymentTransaction trans = new PaymentTransaction((int) transaction.get("amount"), card,
+                (String) transaction.get("transactionContent"), new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").parse((String) transaction.get("createdAt")));
 
         switch ((String) response.get("errorCode")) {
             case "00":
@@ -145,7 +144,7 @@ public class InterbankSubsystemController {
         return obj;
     }
 
-    private String format(String date){
+    private String format(Date date){
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
         String strDate = formatter.format(date);
         System.out.println(strDate);

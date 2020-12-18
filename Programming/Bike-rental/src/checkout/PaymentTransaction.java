@@ -2,13 +2,16 @@ package checkout;
 
 import checkout.CreditCard;
 
+import java.time.LocalDateTime;
+import java.util.Date;
+
 public class PaymentTransaction {
     private int amount;
     private CreditCard card;
     private String transactionContent;
-    private String createAt;
+    private Date createAt;
 
-    public PaymentTransaction(int amount, CreditCard card, String transactionContent, String createAt) {
+    public PaymentTransaction(int amount, CreditCard card, String transactionContent, Date createAt) {
         this.amount = amount;
         this.card = card;
         this.transactionContent = transactionContent;
@@ -23,7 +26,7 @@ public class PaymentTransaction {
         return transactionContent;
     }
 
-    public String getCreateAt() {
+    public Date getCreateAt() {
         return createAt;
     }
 
@@ -35,7 +38,7 @@ public class PaymentTransaction {
         this.transactionContent = transactionContent;
     }
 
-    public void setCreateAt(String createAt) {
+    public void setCreateAt(Date createAt) {
         this.createAt = createAt;
     }
 

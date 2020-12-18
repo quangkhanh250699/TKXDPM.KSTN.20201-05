@@ -5,6 +5,7 @@ import checkout.exception.*;
 import org.json.JSONException;
 
 import java.io.IOException;
+import java.text.ParseException;
 
 public class InterbankSubsystem implements InterbankInterface{
 
@@ -24,7 +25,7 @@ public class InterbankSubsystem implements InterbankInterface{
     /**
      * @see InterbankInterface#payRental(CreditCard, int, String)
      */
-    public PaymentTransaction payRental(CreditCard card, int amount, String contents) throws PaymentException, UnrecognizedException, IOException, JSONException {
+    public PaymentTransaction payRental(CreditCard card, int amount, String contents) throws PaymentException, UnrecognizedException, IOException, JSONException, ParseException {
         PaymentTransaction transaction = ctrl.payRental(card, amount, contents);
         return transaction;
     }
@@ -32,7 +33,7 @@ public class InterbankSubsystem implements InterbankInterface{
     /**
      * @see InterbankInterface#refund(CreditCard, int, String)
      */
-    public PaymentTransaction refund(CreditCard card, int amount, String contents) throws PaymentException, UnrecognizedException, IOException, JSONException {
+    public PaymentTransaction refund(CreditCard card, int amount, String contents) throws PaymentException, UnrecognizedException, IOException, JSONException, ParseException {
         PaymentTransaction transaction = ctrl.refund(card, amount, contents);
         return transaction;
     }
