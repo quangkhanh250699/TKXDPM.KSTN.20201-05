@@ -44,6 +44,6 @@ public class Bike {
 
     @Override
     public String toString() {
-        return "Xe đạp số " + this.bikeId + ": " +  this.bikeName + ". Barcode: " + this.bikeId;
+        return "Xe đạp số " + this.bikeId + ".Tên xe: " +  this.bikeName + ". Barcode: " + this.bikeId;
     }
 }

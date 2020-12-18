@@ -22,7 +22,9 @@ class UserControllerTest {
 
     @Test
     void getUser() {
-        User user = userController.getUser();
-        assertNotEquals(null, user);
+        int userId = 1;
+        User user = userController.getUser(userId);
+        assertEquals(userId, user.getUserId());
+        assertEquals(true, user.getRentBikes().size() > 0);
     }
 }

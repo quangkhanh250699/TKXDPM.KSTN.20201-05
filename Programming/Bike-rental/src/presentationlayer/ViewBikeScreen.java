@@ -13,7 +13,7 @@ import java.io.IOException;
 
 public class ViewBikeScreen {
     @FXML
-    ListView<Bike> list;
+    ListView<String> list;
 
     public void setStationId(int stationId) {
         this.stationId = stationId;
@@ -37,24 +37,21 @@ public class ViewBikeScreen {
     }
 
     public void initData(int stationId, Bike bike) {
-        int tmp = bike.getStationId();
-        this.setStationId(tmp);
-        /* ------- Code get data from controller ------
-        Station station = StationController.getStation(stationID);
-        List<Bike> bikes = station.getBikes();
-        ObservableList<Bike> items = FXCollections.observableArrayList(bikes);
+        // Set stationId to goback
+        this.setStationId(stationId);
 
-        */
-        /* ------- Code fake data --------------------- */
-//        Bike tmp1 = new Bike(stationID, "xe dap tinh yeu", null, 0);
-//        Bike  tmp2 = new Bike(5, "xe dap may man",null, 0);
-//        Bike  tmp3 = new Bike(5, "xe dap tinh yeu", null, 0);
-//        Bike  tmp4 = new Bike(5, "xe dap tinh yeu", null, 0);
-//
-//        ObservableList<Bike> items = FXCollections.observableArrayList(tmp1, tmp2, tmp3, tmp4);
+        // Rent bike information
+        String bikeid = "Bike id: " + bike.getBikeId();
+        String bikename = "Bike name:  " + bike.getBikeName();
+        String pin = "Pin: " + bike.getPin();
+        String status =  bike.isStatus() ? "Trạng thái: Sẵn sàng" : "Trạng thái: Đang cho mượn";
+        String bikecategory = "Caterory: " + bike.getCategory().getName();
+        String description = "Description: " + bike.getCategory().getDescription();
+        String costPerHour = "Cost per hour: " + bike.getCategory().getCost_per_hour();
+        ObservableList<String> items = FXCollections.observableArrayList(bikeid, bikename, pin, status, bikecategory
+        , description, costPerHour);
 
-        /* --------------------------------------------------*/
-//        list.setItems(items);
-//        list.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+        list.setItems(items);
+        list.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
     }
 }
