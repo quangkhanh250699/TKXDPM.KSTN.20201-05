@@ -1,5 +1,6 @@
 package applicationlayer;
 
+import datalayer.model.Bike;
 import datalayer.model.RentedBike;
 
 import java.sql.Timestamp;
@@ -25,5 +26,10 @@ public class SimpleCostCalculator implements CostComputer {
             cost = COST_PER_24H + later * EXTRA_COST_PER_15_MINUTE;
         }
         return cost;
+    }
+
+    @Override
+    public float getDebit(Bike bike)  {
+        return (float) 0.4 * 400000;
     }
 }

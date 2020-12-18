@@ -12,8 +12,8 @@ public class ReturnBikeController {
         this.calculator = new SimpleCostCalculator();
     }
 
-    public void requestReturnBike(RentedBike bike) {
-        return;
+    public String requestReturnBike(RentedBike bike) {
+        return null;
     }
 
     public float calculateCost(RentedBike rentedBike, Timestamp endTime) {
