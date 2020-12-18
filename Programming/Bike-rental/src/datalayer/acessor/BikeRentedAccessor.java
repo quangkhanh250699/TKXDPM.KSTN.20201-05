@@ -83,39 +83,74 @@ public class BikeRentedAccessor extends DataAccessor<RentedBike>{
     @Override
     public void update(RentedBike rentedBike) {
         BikeAccessor bikeAccessor = new BikeAccessor();
-        String q = "UPDATE rent SET " +
-                " userId = " + rentedBike.getUserId() +
-                " , bikeId = " + rentedBike.getBikeId() +
-                " , start_time = " + "\"" + rentedBike.getStart_time() + "\"" +
-                " , end_time = " + "\"" + rentedBike.getEnd_time() + "\"" +
-                " , debit = " + rentedBike.getDebit() +
-                " WHERE rentId = " + rentedBike.getRentId();
-        System.out.println(q);
-        try{
-            executeUpdate(q);
-            bikeAccessor.update(rentedBike);
-        } catch(Exception e){
-            //Handle errors for Class.forName
-            e.printStackTrace();
+        if(rentedBike.getEnd_time() == null){
+            String q = "UPDATE rent SET " +
+                    " userId = " + rentedBike.getUserId() +
+                    " , bikeId = " + rentedBike.getBikeId() +
+                    " , start_time = " + "\"" + rentedBike.getStart_time() + "\"" +
+                    " , debit = " + rentedBike.getDebit() +
+                    " WHERE rentId = " + rentedBike.getRentId();
+            System.out.println(q);
+            try{
+                executeUpdate(q);
+                bikeAccessor.update(rentedBike);
+            } catch(Exception e){
+                //Handle errors for Class.forName
+                e.printStackTrace();
+            }
+        }else{
+            String q = "UPDATE rent SET " +
+                    " userId = " + rentedBike.getUserId() +
+                    " , bikeId = " + rentedBike.getBikeId() +
+                    " , start_time = " + "\"" + rentedBike.getStart_time() + "\"" +
+                    " , end_time = " + "\"" + rentedBike.getEnd_time() + "\"" +
+                    " , debit = " + rentedBike.getDebit() +
+                    " WHERE rentId = " + rentedBike.getRentId();
+            System.out.println(q);
+            try{
+                executeUpdate(q);
+                bikeAccessor.update(rentedBike);
+            } catch(Exception e){
+                //Handle errors for Class.forName
+                e.printStackTrace();
+            }
         }
+
         return;
     }
 
     @Override
     public void save(RentedBike rentedBike) {
-        String q = "insert into rent(userId, bikeId, start_time, end_time, debit)\n" +
-                "values(" +
-                rentedBike.getUserId() + ", " + rentedBike.getBikeId() + ", " +
-                "\"" + rentedBike.getStart_time() + "\" , " +
-                "\"" + rentedBike.getEnd_time() + "\" , " + rentedBike.getDebit() +
-                ")";
-        System.out.println(q);
-        try{
-            executeUpdate(q);
-        } catch(Exception e){
-            //Handle errors for Class.forName
-            e.printStackTrace();
+        if(rentedBike.getEnd_time() == null){
+            String q = "insert into rent(userId, bikeId, start_time, debit)\n" +
+                    "values(" +
+                    rentedBike.getUserId() + ", " + rentedBike.getBikeId() + ", " +
+                    "\"" + rentedBike.getStart_time() + "\" , " +
+                    rentedBike.getDebit() +
+                    ")";
+            System.out.println(q);
+            try{
+                executeUpdate(q);
+            } catch(Exception e){
+                //Handle errors for Class.forName
+                e.printStackTrace();
+            }
+        }else{
+            String q = "insert into rent(userId, bikeId, start_time, end_time, debit)\n" +
+                    "values(" +
+                    rentedBike.getUserId() + ", " + rentedBike.getBikeId() + ", " +
+                    "\"" + rentedBike.getStart_time() + "\" , " +
+                    "\"" + rentedBike.getEnd_time() + "\" , " + rentedBike.getDebit() +
+                    ")";
+            System.out.println(q);
+            try{
+                executeUpdate(q);
+            } catch(Exception e){
+                //Handle errors for Class.forName
+                e.printStackTrace();
+            }
         }
+
         return;
     }
 
