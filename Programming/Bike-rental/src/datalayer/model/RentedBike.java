@@ -30,6 +30,9 @@ public class RentedBike extends Bike {
         this.rentId = rentId;
     }
 
+    public int getDebit() {
+        return debit;
+    }
 
     public int getRentId() {
         return rentId;

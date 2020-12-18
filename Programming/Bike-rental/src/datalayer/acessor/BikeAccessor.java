@@ -101,16 +101,49 @@ public class BikeAccessor extends DataAccessor<Bike>{
 
     @Override
     public void update(Bike bike) {
-
+        String q = "UPDATE bike SET " +
+                        " bike_name = " + "\"" +  bike.getBikeName() + "\"" +
+                        " , stationId = " + bike.getStationId()+
+                        " , pin = " + bike.getPin() +
+                        " , status = " + (bike.isStatus() ? 1 : 0) +
+                        " , categoryId = " + bike.getCategory().getCategoryId() +
+                        " WHERE bikeId = " + bike.getBikeId();
+        System.out.println(q);
+        try{
+            executeUpdate(q);
+        } catch(Exception e){
+            //Handle errors for Class.forName
+            e.printStackTrace();
+        }
+        return;
     }
 
     @Override
     public void save(Bike bike) {
-
+        String q = "INSERT INTO bike(bike_name, stationId, pin, status, categoryId) VALUES (" +
+                    "\""+ bike.getBikeName() + "\", " + bike.getStationId() + ", " + bike.getPin() + ", " +
+                    (bike.isStatus() ? 1:0) + ", " + bike.getCategory().getCategoryId()
+                    +")";
+        System.out.println(q);
+        try{
+            executeUpdate(q);
+        } catch(Exception e){
+            //Handle errors for Class.forName
+            e.printStackTrace();
+        }
+        return;
     }
 
     @Override
     public void delete(Bike bike) {
-
+        String q = "DELETE FROM bike WHERE bikeId = " + bike.getBikeId();
+        System.out.println(q);
+        try{
+            execute(q);
+        } catch(Exception e){
+            //Handle errors for Class.forName
+            e.printStackTrace();
+        }
+        return;
     }
 }
