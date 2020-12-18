@@ -46,7 +46,17 @@ public class RentBikeController {
             Date date  = new Date();
             Timestamp startTime = new Timestamp(date.getTime());
             int rentId = -1;
-            RentedBike rentedBike = new RentedBike(-1, userId, bike.getBikeId(), startTime, null);
+            RentedBike rentedBike = new RentedBike(
+                    bike.getBikeId(),
+                    bike.getBikeName(),
+                    bike.getStationId(),
+                    bike.getPin(),
+                    bike.isStatus(),
+                    bike.getCategory(),
+                    userId,
+                    cost,
+                    startTime
+            );
             BikeRentedAccessor accessor = new BikeRentedAccessor();
             accessor.update(rentedBike);
 
