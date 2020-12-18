@@ -17,6 +17,7 @@ public class UserAccessor extends DataAccessor<User>{
             BikeRentedAccessor bikeRentedAccessor = new BikeRentedAccessor();
             rs.next();
             List<RentedBike> rentedBikes = bikeRentedAccessor.getBikeRentByUserId(id);
+            
             user = new User(id, rs.getString("name"), rentedBikes);
 
         }catch(SQLException se){
