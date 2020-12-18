@@ -1,9 +1,6 @@
 package datalayer.acessor;
 
-import datalayer.model.Bike;
-import datalayer.model.Category;
-import datalayer.model.CategoryFactory;
-import datalayer.model.RentedBike;
+import datalayer.model.*;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -17,9 +14,13 @@ public class BikeRentedAccessor extends DataAccessor<RentedBike>{
         RentedBike rentedBike = null;
         try{
             ResultSet rs = query(q);
+            BikeFactory bikeFactory = BikeFactory.getInstance();
             rs.next();
-            rentedBike = new RentedBike(id, rs.getInt("userId"), rs.getInt("bikeId"),
-                    rs.getTimestamp("start_time"), rs.getTimestamp("end_time"));
+            Bike bike = bikeFactory.getBikeById(rs.getInt("bikeId"));
+            rentedBike = new RentedBike(bike.getBikeId(), bike.getBikeName(), bike.getStationId(),
+                    bike.getPin(), bike.isStatus(), bike.getCategory(), rs.getInt("userId"),
+                    rs.getInt("debit"), rs.getTimestamp("start_time"),
+                    rs.getTimestamp("end_time"), rs.getInt("rentId"));
         }catch(SQLException se){
             //Handle errors for JDBC
             se.printStackTrace();
@@ -36,9 +37,14 @@ public class BikeRentedAccessor extends DataAccessor<RentedBike>{
         List<RentedBike> rentedBikes = new ArrayList<RentedBike>();
         try{
             ResultSet rs = query(q);
+            BikeFactory bikeFactory = BikeFactory.getInstance();
             while(rs.next()){
-                rentedBikes.add(new RentedBike(rs.getInt("rentId"), rs.getInt("userId"), rs.getInt("bikeId"),
-                        rs.getTimestamp("start_time"), rs.getTimestamp("end_time")));
+                Bike bike = bikeFactory.getBikeById(rs.getInt("bikeId"));
+                RentedBike rentedBike = new RentedBike(bike.getBikeId(), bike.getBikeName(), bike.getStationId(),
+                        bike.getPin(), bike.isStatus(), bike.getCategory(), rs.getInt("userId"),
+                        rs.getInt("debit"), rs.getTimestamp("start_time"),
+                        rs.getTimestamp("end_time"), rs.getInt("rentId"));
+                rentedBikes.add(rentedBike);
             }
         }catch(SQLException se){
             //Handle errors for JDBC
@@ -55,9 +61,14 @@ public class BikeRentedAccessor extends DataAccessor<RentedBike>{
         List<RentedBike> rentedBikes = new ArrayList<RentedBike>();
         try{
             ResultSet rs = query(q);
+            BikeFactory bikeFactory = BikeFactory.getInstance();
             while(rs.next()){
-                rentedBikes.add(new RentedBike(rs.getInt("rentId"), rs.getInt("userId"), rs.getInt("bikeId"),
-                        rs.getTimestamp("start_time"), rs.getTimestamp("end_time")));
+                Bike bike = bikeFactory.getBikeById(rs.getInt("bikeId"));
+                RentedBike rentedBike = new RentedBike(bike.getBikeId(), bike.getBikeName(), bike.getStationId(),
+                        bike.getPin(), bike.isStatus(), bike.getCategory(), rs.getInt("userId"),
+                        rs.getInt("debit"), rs.getTimestamp("start_time"),
+                        rs.getTimestamp("end_time"), rs.getInt("rentId"));
+                rentedBikes.add(rentedBike);
             }
         }catch(SQLException se){
             //Handle errors for JDBC
