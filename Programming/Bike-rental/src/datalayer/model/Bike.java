@@ -2,12 +2,12 @@ package datalayer.model;
 
 public class Bike {
 
-    private int bikeId;
-    private String bikeName;
-    private int stationId;
-    private float pin;
-    private boolean status;
-    private Category category;
+    protected int bikeId;
+    protected String bikeName;
+    protected int stationId;
+    protected float pin;
+    protected boolean status;
+    protected Category category;
 
     public Bike(int bikeId, String bikeName, int stationId, float pin, boolean status, Category category) {
         this.bikeId = bikeId;
