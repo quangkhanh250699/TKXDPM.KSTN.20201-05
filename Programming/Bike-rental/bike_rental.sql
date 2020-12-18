@@ -63,6 +63,7 @@ create table if not exists bike_rental.`rent`(
     bikeId int,
     start_time timestamp default current_timestamp,
     end_time timestamp,
+    debit int,
     constraint pk_rent primary key(rentId),
     foreign key (userId) references bike_rental.user(userId),
     foreign key (bikeId) references bike_rental.bike(bikeId)
@@ -95,7 +96,7 @@ values('No_001', 1, null, 0, 1),
 insert into bike_rental.user(name)
 values ('admin');
 
-insert into bike_rental.rent(userId, bikeId, start_time, end_time)
-values (1, 1, '2020-12-10 00:00:01', null),
-		(1, 2, now(), null);
+insert into bike_rental.rent(userId, bikeId, start_time, end_time, debit)
+values (1, 1, '2020-12-10 00:00:01', '2020-12-11 06:00:01', 5),
+		(1, 2, now(), null, 5);
 

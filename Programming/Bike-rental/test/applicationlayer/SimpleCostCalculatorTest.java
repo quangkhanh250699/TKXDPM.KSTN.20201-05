@@ -36,7 +36,9 @@ class SimpleCostCalculatorTest {
         long duration = TimeUnit.MINUTES.toMillis(minute);
         Timestamp startTime = new Timestamp(temp.getTime());
         Timestamp endTime = new Timestamp(temp.getTime() + duration);
-        RentedBike rentedBike = new RentedBike(1, 1, 1, startTime, null);
+        RentedBike rentedBike = new RentedBike(1, "1", 1, 1, true, null, 1, 0,
+                startTime,
+                endTime, 5);
         float cost = simpleCostCalculator.checkout(rentedBike, endTime);
         assertEquals(expected, cost);
     }
