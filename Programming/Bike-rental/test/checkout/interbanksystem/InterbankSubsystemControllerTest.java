@@ -7,6 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
+import java.text.ParseException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -23,7 +24,8 @@ class InterbankSubsystemControllerTest {
     }
 
     @Test
-    void payRental() throws IOException, JSONException {
+    void payRental() throws IOException, JSONException, ParseException {
         PaymentTransaction a = interbankSubsystemController.payRental(card, 12, "test");
+        assertEquals(12, a.getAmount());
     }
 }
