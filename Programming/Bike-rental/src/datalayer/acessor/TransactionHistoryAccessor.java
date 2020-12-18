@@ -52,16 +52,52 @@ public class TransactionHistoryAccessor extends DataAccessor<TransactionHistory>
 
     @Override
     public void update(TransactionHistory transactionHistory) {
-
+        String q = "UPDATE transaction SET " +
+                " userId = " + transactionHistory.getUserId() +
+                " , total_payment = " + transactionHistory.getTotal_payment() +
+                " , time = " + "\"" + transactionHistory.getTime() + "\"" +
+                " , bike_name = " + "\"" +  transactionHistory.getBike_name() + "\"" +
+                " , rented_duration = " + transactionHistory.getRented_duration() +
+                " WHERE transactionId = " + transactionHistory.getTransactionId();
+        System.out.println(q);
+        try{
+            executeUpdate(q);
+        } catch(Exception e){
+            //Handle errors for Class.forName
+            e.printStackTrace();
+        }
+        return;
     }
 
     @Override
     public void save(TransactionHistory transactionHistory) {
-
+        String q = "INSERT INTO transaction(userId, total_payment, time, bike_name, rented_duration) VALUES (" +
+                transactionHistory.getUserId() +
+                ", " + transactionHistory.getTotal_payment() +
+                ", " + "\"" + transactionHistory.getTime() + "\"" +
+                ", " + "\"" + transactionHistory.getBike_name() + "\"" +
+                ", " + transactionHistory.getRented_duration() +
+                ")";
+        System.out.println(q);
+        try{
+            executeUpdate(q);
+        } catch(Exception e){
+            //Handle errors for Class.forName
+            e.printStackTrace();
+        }
+        return;
     }
 
     @Override
     public void delete(TransactionHistory transactionHistory) {
-
+        String q = "DELETE FROM transaction WHERE transactionId = " + transactionHistory.getTransactionId();
+        System.out.println(q);
+        try{
+            execute(q);
+        } catch(Exception e){
+            //Handle errors for Class.forName
+            e.printStackTrace();
+        }
+        return;
     }
 }

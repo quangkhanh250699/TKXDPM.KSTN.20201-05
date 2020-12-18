@@ -52,16 +52,51 @@ public class CategoryAccessor extends DataAccessor<Category>{
 
     @Override
     public void update(Category category) {
-
+        String q = "UPDATE category SET " +
+                " name = " + "\"" +  category.getName() + "\"" +
+                " , description = " + "\"" +  category.getDescription() + "\"" +
+                " , cost_per_hour = " + category.getCost_per_hour() +
+                " , n_pedals = " + category.getN_pedals() +
+                " , n_seats = " + category.getN_seats() +
+                " WHERE categoryId = " + category.getCategoryId();
+        System.out.println(q);
+        try{
+            executeUpdate(q);
+        } catch(Exception e){
+            //Handle errors for Class.forName
+            e.printStackTrace();
+        }
+        return;
     }
 
     @Override
     public void save(Category category) {
-
+        String q = "insert into category(name, description, cost_per_hour, n_pedals, n_seats)\n" +
+                "values( " +
+                "\""+ category.getName() + "\", " + "\""+ category.getDescription() + "\", " +
+                category.getCost_per_hour() + ", " +
+                category.getN_pedals() + ", " + category.getN_seats()
+                +")";
+        System.out.println(q);
+        try{
+            executeUpdate(q);
+        } catch(Exception e){
+            //Handle errors for Class.forName
+            e.printStackTrace();
+        }
+        return;
     }
 
     @Override
     public void delete(Category category) {
-
+        String q = "DELETE FROM category WHERE categoryId = " + category.getCategoryId();
+        System.out.println(q);
+        try{
+            execute(q);
+        } catch(Exception e){
+            //Handle errors for Class.forName
+            e.printStackTrace();
+        }
+        return;
     }
 }
