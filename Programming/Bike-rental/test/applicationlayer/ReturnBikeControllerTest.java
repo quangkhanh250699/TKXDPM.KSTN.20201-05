@@ -1,6 +1,7 @@
 package applicationlayer;
 
 import checkout.CreditCard;
+import datalayer.acessor.BikeRentedAccessor;
 import datalayer.model.RentedBike;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -27,9 +28,8 @@ class ReturnBikeControllerTest {
     void requestReturnBike() {
         int userId = 1;
         CreditCard creditCard = new CreditCard("118131_group5_2020", "Group 5", "296", "1125");
-        RentedBike rentedBike = new RentedBike(1, "1", 1, 1, true, null, 1, 0,
-                new Timestamp(2020, 12, 12, 12, 0, 0, 0),
-                new Timestamp(2020, 12, 12, 13, 0, 0, 0),4);
+        RentedBike rentedBike = (new BikeRentedAccessor()).get(1);
+        rentedBike.setStatus(false);
 
         assertEquals("You returned bike successfully!",
                 this.returnBikeController.requestReturnBike(

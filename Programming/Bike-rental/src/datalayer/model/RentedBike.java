@@ -54,6 +54,10 @@ public class RentedBike extends Bike {
         return end_time;
     }
 
+    public void setEnd_time(Timestamp end_time) {
+        this.end_time = end_time;
+    }
+
     @Override
     public String toString() {
         return "RentedBike{" +
