@@ -1,9 +1,12 @@
 package applicationlayer;
 
+import datalayer.model.RentedBike;
 import datalayer.model.User;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -25,6 +28,7 @@ class UserControllerTest {
         int userId = 1;
         User user = userController.getUser(userId);
         assertEquals(userId, user.getUserId());
-        assertEquals(true, user.getRentBikes().size() > 0);
+        List<RentedBike> bikes = user.getRentBikes();
+        bikes.forEach(bike -> assertEquals(null, bike.getEnd_time()));
     }
 }
