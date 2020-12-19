@@ -21,6 +21,7 @@ import java.text.ParseException;
 public class RentBikeController {
 
     private final String SUCCESS_NOTIFICATION = "You transaction is successful!";
+    private final String BIKE_IS_RENTED = "This bike is rented, please choose others";
 
     private BarcodeProcessor barcodeProcessor;
     private BikeAccessor bikeAccessor;
@@ -40,6 +41,8 @@ public class RentBikeController {
     }
 
     public String requestRentBike(int userId, Bike bike, CreditCard creditCard) {
+        if (bike.isStatus())
+            return BIKE_IS_RENTED;
         int cost = (int) this.costComputer.getDebit(bike);
         try {
             PaymentTransaction paymentTransaction = this.interbank.payRental(creditCard, cost, bike.getBikeName());
@@ -58,7 +61,7 @@ public class RentBikeController {
                     startTime
             );
             BikeRentedAccessor accessor = new BikeRentedAccessor();
-            accessor.update(rentedBike);
+            accessor.save(rentedBike);
 
             return SUCCESS_NOTIFICATION;
 

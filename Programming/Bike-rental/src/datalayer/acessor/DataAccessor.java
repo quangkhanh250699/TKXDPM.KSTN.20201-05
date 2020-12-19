@@ -12,4 +12,14 @@ public abstract class DataAccessor<T> implements DataAccessorInterface<T> {
     public ResultSet query(String q){
         return dbConnection.query(q);
     }
+
+    public void execute(String q){
+        dbConnection.execute(q);
+        return;
+    }
+
+    public void executeUpdate(String q){
+        dbConnection.executeUpdate(q);
+        return;
+    }
 }
