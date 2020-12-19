@@ -35,7 +35,8 @@
             <Image url="@../resources/images/bike_station1.jpeg" />
          </image>
       </ImageView>
-      <ListView fx:id="list" layoutX="299.0" layoutY="226.0" onMouseClicked="#goReturnBikeScreen" prefHeight="201.0" prefWidth="398.0" />
+      <ListView fx:id="list" layoutX="299.0" layoutY="226.0"  prefHeight="201.0" prefWidth="398.0" />
       <Button layoutX="722.0" layoutY="28.0" mnemonicParsing="false" onAction="#goBack" prefHeight="27.0" prefWidth="65.0" style="-fx-border-color: #14db17;" text="Back" />
+      <Button id="round-red" layoutX="436.0" layoutY="447.0" mnemonicParsing="false" onAction="#goReturnBikeScreen" prefHeight="25.0" prefWidth="114.0" style="-fx-background-color: #3cc985; -fx-border-radius: 5px;" stylesheets="@../resources/styles/style.css" text="Return Bike" />
    </children>
 </AnchorPane>

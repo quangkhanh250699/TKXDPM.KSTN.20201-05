@@ -36,7 +36,7 @@
             <Image url="@../resources/images/bike_station1.jpeg" />
          </image>
       </ImageView>
-      <Button layoutX="722.0" layoutY="28.0" mnemonicParsing="false" onAction="#goBack" prefHeight="27.0" prefWidth="65.0" style="-fx-border-color: #14db17;" text="Back" />
+      <Button layoutX="722.0" layoutY="28.0" mnemonicParsing="false" onAction="#goBack" prefHeight="27.0" prefWidth="65.0" style="-fx-border-color: #14db17;" text="Home" />
       <Text fx:id="result" fill="#0d3c87" layoutX="417.0" layoutY="314.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="286.5999755859375">
          <font>
             <Font size="18.0" />

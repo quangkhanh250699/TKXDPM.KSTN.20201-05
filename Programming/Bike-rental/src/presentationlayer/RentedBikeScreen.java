@@ -22,9 +22,21 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class RentedBikeScreen {
+    public void setRentedBike(RentedBike rentedBike) {
+        this.rentedBike = rentedBike;
+    }
+
+    public RentedBike getRentedBike() {
+        return rentedBike;
+    }
+
+    private  RentedBike rentedBike;
     @FXML
     ListView list;
     public void initData(RentedBike rentedBike) {
+        // Set rented bike
+        this.setRentedBike(rentedBike);
+
         // Bike information
         String bikeid = "Bike id: " + rentedBike.getBikeId();
         String bikename = "Bike name:  " + rentedBike.getBikeName();
@@ -33,11 +45,14 @@ public class RentedBikeScreen {
         String description = "Description: " + rentedBike.getCategory().getDescription();
         String costPerHour = "Cost per hour: " + rentedBike.getCategory().getCost_per_hour();
         String startTime = "Start time: " + rentedBike.getStart_time();
-        String endTime = "End time: " + rentedBike.getEnd_time();
-        String debit = "Debit: " + rentedBike.getDebit();
-        // Calculate rented cost
+
+        // get end time
         Date date = new Date();
         java.sql.Timestamp end = new Timestamp(date.getTime());
+        String endTime = "End time: " + end;
+
+        String debit = "Debit: " + rentedBike.getDebit();
+        // Calculate rented cost
         ReturnBikeController returnBikeController = new ReturnBikeController();
         String Cost = "Rented cost up to now: " + returnBikeController.calculateCost(rentedBike, end);
 
@@ -51,7 +66,7 @@ public class RentedBikeScreen {
         App.getInstance().display_BikeRentedListScreen(App.userID);
     }
 
-    public void goReturnBikeScreen(MouseEvent mouseEvent) {
-        //
+    public void goReturnBikeScreen(ActionEvent e) throws IOException {
+        App.getInstance().display_ReturnBikeScreen(this.getRentedBike());
     }
 }

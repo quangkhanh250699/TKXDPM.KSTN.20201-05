@@ -18,11 +18,13 @@ public class App extends Application {
     private static Stage guiStage;
 
 
-    public void start(Stage stage) {
+    public void start(Stage stage) throws IOException {
         instance = this;
         guiStage = stage;
         display_HomeScreen();
+//        display("ReturnBikeScreen.fxml");
     }
+
 
     public static void main(String[] args) {
         System.out.println(System.getProperty("user.dir"));
@@ -88,8 +90,14 @@ public class App extends Application {
     }
 
 
-    public void display_ReturnBikeScreen () {
-
+    public void display_ReturnBikeScreen (RentedBike rentedBike) throws IOException {
+        FXMLLoader loader = new FXMLLoader(instance.getClass().getResource("ReturnBikeScreen.fxml"));
+        root = loader.load();
+        ReturnBikeScreen controller = loader.getController();
+        controller.initData(rentedBike);
+        Scene scene = new Scene(root);
+        guiStage.setScene(scene);
+        guiStage.show();
     }
 
 

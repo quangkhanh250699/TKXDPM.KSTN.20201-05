@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 public class BikeRentedListScreen {
     @FXML
-    ListView list;
+    ListView<RentedBike> list;
     public void initData(int userId) {
         //Rent Listbikerented took from user
         UserController userController = new UserController();
@@ -31,7 +31,8 @@ public class BikeRentedListScreen {
     }
 
     public void goRentedBikeScreen(MouseEvent mouseEvent) throws IOException {
-        RentedBike rentedBike = (RentedBike) list.getSelectionModel().getSelectedItem();
+//        System.out.println(list.getSelectionModel().getSelectedItem().getClass());
+        RentedBike rentedBike =  list.getSelectionModel().getSelectedItem();
         App.getInstance().display_RentedBikeScreen(rentedBike);
     }
 }

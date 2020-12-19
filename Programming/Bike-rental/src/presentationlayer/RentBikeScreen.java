@@ -64,7 +64,7 @@ public class RentBikeScreen {
 
 
     public void goNotificationScreen(ActionEvent actionEvent) throws IOException {
-        // Get the data from user(fix)
+        // Get the data from user
         CreditCard creditCard = new CreditCard(cardCode.getText(), Owner.getText(),
         cvvCode.getText(), dateExpired.getText());
 
