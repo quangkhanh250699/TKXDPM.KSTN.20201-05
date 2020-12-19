@@ -14,9 +14,8 @@ public class SimpleCostCalculator implements CostComputer {
 
     @Override
     public float checkout(RentedBike rentedBike, Timestamp endTime) {
-        long duration = (endTime.getTime() - rentedBike.getStart_time().getTime());
-        float hours = TimeUnit.MILLISECONDS.toHours(duration);
-        float minutes = TimeUnit.MILLISECONDS.toMinutes(duration);
+        long minutes = getMinutes(rentedBike.getStart_time(), endTime);
+        long hours = TimeUnit.MINUTES.toHours(minutes);
         float cost = 200000;
         if (hours < 12) {
             int earlier = (int) Math.ceil(12 - hours);
@@ -26,6 +25,11 @@ public class SimpleCostCalculator implements CostComputer {
             cost = COST_PER_24H + later * EXTRA_COST_PER_15_MINUTE;
         }
         return cost;
+    }
+
+    protected long getMinutes(Timestamp start, Timestamp end) {
+        long duration = (end.getTime() - start.getTime());
+        return TimeUnit.MILLISECONDS.toMinutes(duration);
     }
 
     @Override

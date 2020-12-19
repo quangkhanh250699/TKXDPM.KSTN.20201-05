@@ -20,7 +20,7 @@ import java.text.ParseException;
 
 public class RentBikeController {
 
-    private final String SUCCESS_NOTIFICATION = "You transaction is successful!";
+    private final String SUCCESS_NOTIFICATION = "Your transaction is successful!";
     private final String BIKE_IS_RENTED = "This bike is rented, please choose others";
 
     private BarcodeProcessor barcodeProcessor;
