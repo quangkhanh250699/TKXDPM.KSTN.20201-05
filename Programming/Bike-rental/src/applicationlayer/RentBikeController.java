@@ -54,13 +54,15 @@ public class RentBikeController {
                     bike.getBikeName(),
                     bike.getStationId(),
                     bike.getPin(),
-                    bike.isStatus(),
+                    true,
                     bike.getCategory(),
                     userId,
                     cost,
                     startTime
             );
             BikeRentedAccessor accessor = new BikeRentedAccessor();
+            BikeAccessor bikeAccessor = new BikeAccessor();
+            bikeAccessor.update(rentedBike);
             accessor.save(rentedBike);
 
             return SUCCESS_NOTIFICATION;
