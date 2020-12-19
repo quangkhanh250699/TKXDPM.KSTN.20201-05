@@ -1,6 +1,7 @@
 package presentationlayer;
 
 import datalayer.model.Bike;
+import datalayer.model.RentedBike;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -92,8 +93,25 @@ public class App extends Application {
     }
 
 
-    public void display_RentedBikeScreen () {
 
+    public void display_RentedBikeScreen(RentedBike rentedBike) throws IOException {
+        FXMLLoader loader = new FXMLLoader(instance.getClass().getResource("RentedBikeScreen.fxml"));
+        root = loader.load();
+        RentedBikeScreen controller = loader.getController();
+        controller.initData(rentedBike);
+        Scene scene = new Scene(root);
+        guiStage.setScene(scene);
+        guiStage.show();
+    }
+
+    public void display_BikeRentedListScreen(int userID) throws IOException {
+        FXMLLoader loader = new FXMLLoader(instance.getClass().getResource("BikeRentedListScreen.fxml"));
+        root = loader.load();
+        BikeRentedListScreen controller = loader.getController();
+        controller.initData(userID);
+        Scene scene = new Scene(root);
+        guiStage.setScene(scene);
+        guiStage.show();
     }
 
     public static App getInstance() {

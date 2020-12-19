@@ -20,7 +20,7 @@
          <children>
             <AnchorPane prefHeight="86.0" prefWidth="782.0">
                <children>
-                  <Button id="round-red" layoutX="566.0" layoutY="32.0" mnemonicParsing="false" onAction="#goRentedBikeScreen" prefHeight="25.0" prefWidth="114.0" style="-fx-background-color: #3cc985; -fx-border-radius: 5px;" stylesheets="@../resources/styles/style.css" text="View rented bike" />
+                  <Button id="round-red" layoutX="656.0" layoutY="32.0" mnemonicParsing="false" onAction="#goBikeRentedListScreen" prefHeight="25.0" prefWidth="114.0" style="-fx-background-color: #3cc985; -fx-border-radius: 5px;" stylesheets="@../resources/styles/style.css" text="View rented bike" />
                   <ImageView fitHeight="84.0" fitWidth="104.0" layoutX="83.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../resources/images/logo.jpeg" />

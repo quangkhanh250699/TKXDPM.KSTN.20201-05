@@ -60,12 +60,6 @@ public class RentedBike extends Bike {
 
     @Override
     public String toString() {
-        return "RentedBike{" +
-                "rentId=" + this.rentId +
-                ", userId=" + this.userId +
-                ", bikeId=" + this.bikeId +
-                ", start_time=" + this.start_time +
-                ", end_time=" + this.end_time +
-                '}';
+        return "Xe số: " + this.bikeId + " thuê ở bãi xe số " + this.stationId;
     }
 }

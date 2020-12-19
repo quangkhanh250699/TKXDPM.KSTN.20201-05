@@ -47,7 +47,7 @@ public class RentBikeScreen {
         String bikeid = "Bike id: " + bike.getBikeId();
         String bikename = "Bike name:  " + bike.getBikeName();
         String pin = "Pin: " + bike.getPin();
-        String status =  bike.isStatus() ? "Trạng thái: Sẵn sàng" : "Trạng thái: Đang cho mượn";
+        String status =  bike.isStatus() ? "Trạng thái: Đang cho mượn" : "Trạng thái: Sẵn sàng";
         String bikecategory = "Caterory: " + bike.getCategory().getName();
         String description = "Description: " + bike.getCategory().getDescription();
         String costPerHour = "Cost per hour: " + bike.getCategory().getCost_per_hour();
@@ -65,10 +65,6 @@ public class RentBikeScreen {
 
     public void goNotificationScreen(ActionEvent actionEvent) throws IOException {
         // Get the data from user(fix)
-        cardCode.setText("118131_group5_2020");
-        Owner.setText("Group 5");
-        cvvCode.setText("296");
-        dateExpired.setText("1125");
         CreditCard creditCard = new CreditCard(cardCode.getText(), Owner.getText(),
         cvvCode.getText(), dateExpired.getText());
 
