@@ -6,6 +6,7 @@ public class Bike {
     protected String bikeName;
     protected int stationId;
     protected float pin;
+
     protected boolean status;
     protected Category category;
 
@@ -40,6 +41,19 @@ public class Bike {
 
     public Category getCategory() {
         return category;
+    }
+
+
+    public void setStationId(int stationId) {
+        this.stationId = stationId;
+    }
+
+    public void setPin(float pin) {
+        this.pin = pin;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 
     @Override

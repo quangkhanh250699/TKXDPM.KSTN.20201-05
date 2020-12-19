@@ -48,4 +48,33 @@ public class MySQLConnection implements DBConnection {
         return rs;
     }
 
+    @Override
+    public void execute(String q) {
+        try{
+            Statement stmt = this.conn.createStatement();
+            stmt.execute(q);
+        }catch(SQLException se){
+            //Handle errors for JDBC
+            se.printStackTrace();
+        }catch(Exception e){
+            //Handle errors for Class.forName
+            e.printStackTrace();
+        }
+        return;
+    }
+
+    @Override
+    public void executeUpdate(String q) {
+        try{
+            Statement stmt = this.conn.createStatement();
+            stmt.executeUpdate(q);
+        }catch(SQLException se){
+            //Handle errors for JDBC
+            se.printStackTrace();
+        }catch(Exception e){
+            //Handle errors for Class.forName
+            e.printStackTrace();
+        }
+        return;
+    }
 }

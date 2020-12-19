@@ -58,7 +58,7 @@ public class RentBikeController {
                     startTime
             );
             BikeRentedAccessor accessor = new BikeRentedAccessor();
-            accessor.update(rentedBike);
+            accessor.save(rentedBike);
 
             return SUCCESS_NOTIFICATION;
 

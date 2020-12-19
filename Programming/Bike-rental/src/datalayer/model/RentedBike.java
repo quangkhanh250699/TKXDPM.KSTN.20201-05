@@ -30,6 +30,9 @@ public class RentedBike extends Bike {
         this.rentId = rentId;
     }
 
+    public int getDebit() {
+        return debit;
+    }
 
     public int getRentId() {
         return rentId;
@@ -49,6 +52,10 @@ public class RentedBike extends Bike {
 
     public Timestamp getEnd_time() {
         return end_time;
+    }
+
+    public void setEnd_time(Timestamp end_time) {
+        this.end_time = end_time;
     }
 
     @Override
