@@ -48,8 +48,8 @@
             <Text fill="#2da222" layoutX="67.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cvv Code" />
             <TextField fx:id="dateExpired" layoutX="128.0" layoutY="108.0" />
             <Text fill="#2da222" layoutX="49.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date Expired" />
-            <Button id="round-red" layoutX="75.0" layoutY="152.0" mnemonicParsing="false" onAction="#goNotificationScreen" prefHeight="25.0" prefWidth="114.0" style="-fx-background-color: #3cc985; -fx-border-radius: 5px;" stylesheets="@../resources/styles/style.css" text="Confirm return bike" />
-            <Button id="round-red" layoutX="220.0" layoutY="152.0" mnemonicParsing="false" onAction="#ResetDefaultValue" prefHeight="25.0" prefWidth="114.0" style="-fx-background-color: #3cc985; -fx-border-radius: 5px;" stylesheets="@../resources/styles/style.css" text="Valid infomation" />
+            <Button id="round-red" layoutX="71.0" layoutY="152.0" mnemonicParsing="false" onAction="#goNotificationScreen" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: #3cc985; -fx-border-radius: 5px;" stylesheets="@../resources/styles/style.css" text="Confirm return bike" />
+            <Button id="round-red" layoutX="212.0" layoutY="152.0" mnemonicParsing="false" onAction="#ResetDefaultValue" prefHeight="25.0" prefWidth="114.0" style="-fx-background-color: #3cc985; -fx-border-radius: 5px;" stylesheets="@../resources/styles/style.css" text="Valid infomation" />
          </children>
       </Pane>
    </children>
