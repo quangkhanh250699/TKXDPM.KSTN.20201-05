@@ -13,15 +13,15 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="830.0" prefWidth="1330.0" styleClass="root" stylesheets="@/resources/styles/light.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentationlayer.HomeScreen">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="root" stylesheets="@/resources/styles/light.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentationlayer.HomeScreen">
    <children>
       <ButtonBar layoutX="439.0" layoutY="234.0" prefHeight="40.0" prefWidth="200.0" />
-      <HBox prefHeight="100.0" prefWidth="1330.0" style="-fx-background-color: aqua;">
+      <HBox prefHeight="84.0" prefWidth="800.0" style="-fx-background-color: aqua;">
          <children>
-            <AnchorPane prefHeight="100.0" prefWidth="1330.0">
+            <AnchorPane prefHeight="86.0" prefWidth="782.0">
                <children>
-                  <Button id="round-red" layoutX="1170.0" layoutY="34.0" mnemonicParsing="false" onAction="#goRentedBikeScreen" prefHeight="25.0" prefWidth="114.0" style="-fx-background-color: #3cc985; -fx-border-radius: 5px;" stylesheets="@../resources/styles/style.css" text="View rented bike" />
-                  <ImageView fitHeight="100.0" fitWidth="184.0" layoutX="142.0" pickOnBounds="true" preserveRatio="true">
+                  <Button id="round-red" layoutX="566.0" layoutY="32.0" mnemonicParsing="false" onAction="#goRentedBikeScreen" prefHeight="25.0" prefWidth="114.0" style="-fx-background-color: #3cc985; -fx-border-radius: 5px;" stylesheets="@../resources/styles/style.css" text="View rented bike" />
+                  <ImageView fitHeight="84.0" fitWidth="104.0" layoutX="83.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../resources/images/logo.jpeg" />
                      </image>
@@ -30,25 +30,27 @@
             </AnchorPane>
          </children>
       </HBox>
-      <HBox layoutY="777.0" prefHeight="53.0" prefWidth="1330.0" style="-fx-background-color: aqua;" />
-      <AnchorPane layoutX="271.0" layoutY="768.0" prefHeight="65.0" prefWidth="752.0" />
-      <Separator layoutX="427.0" orientation="VERTICAL" prefHeight="830.0" prefWidth="0.0" />
-      <ImageView fitHeight="253.0" fitWidth="427.0" layoutX="26.0" layoutY="289.0" pickOnBounds="true" preserveRatio="true">
+      <AnchorPane layoutY="534.0" prefHeight="65.0" prefWidth="752.0">
+         <children>
+            <HBox layoutX="-8.0" layoutY="12.0" prefHeight="54.0" prefWidth="808.0" style="-fx-background-color: aqua;" />
+         </children></AnchorPane>
+      <Separator layoutX="279.0" orientation="VERTICAL" prefHeight="830.0" prefWidth="0.0" />
+      <ImageView fitHeight="222.0" fitWidth="245.0" layoutX="18.0" layoutY="226.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../resources/images/bike_station1.jpeg" />
          </image>
       </ImageView>
-      <ListView fx:id="list" layoutX="439.0" layoutY="289.0" onMouseClicked="#goStationDetail" prefHeight="253.0" prefWidth="658.0" />
-      <Pane layoutX="455.0" layoutY="100.0" prefHeight="178.0" prefWidth="626.0">
+      <ListView fx:id="list" layoutX="299.0" layoutY="226.0" onMouseClicked="#goStationDetail" prefHeight="201.0" prefWidth="398.0" />
+      <Pane layoutX="279.0" layoutY="106.0" prefHeight="98.0" prefWidth="438.0">
          <children>
-            <Button id="round-red" layoutX="403.0" layoutY="117.0" mnemonicParsing="false" onAction="#goRentBikeScreen" prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: #3cc985; -fx-border-radius: 5px;" stylesheets="@../resources/styles/style.css" text="Rent bike" />
-            <TextField fx:id="textField" layoutX="229.0" layoutY="117.0" />
-            <Text fill="#108a34" layoutX="117.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Insert barcode">
+            <Button id="round-red" layoutX="313.0" layoutY="58.0" mnemonicParsing="false" onAction="#goRentBikeScreen" prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: #3cc985; -fx-border-radius: 5px;" stylesheets="@../resources/styles/style.css" text="Rent bike" />
+            <TextField fx:id="textField" layoutX="143.0" layoutY="60.0" />
+            <Text fill="#108a34" layoutX="34.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Insert barcode">
                <font>
                   <Font size="14.0" />
                </font>
             </Text>
-            <Text fx:id="invalidBarcode" fill="#c71313" layoutX="260.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+            <Text fx:id="invalidBarcode" fill="#c71313" layoutX="169.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="88.8125" />
          </children>
       </Pane>
    </children>
