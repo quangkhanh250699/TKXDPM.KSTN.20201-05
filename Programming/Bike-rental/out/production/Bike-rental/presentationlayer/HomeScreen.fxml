@@ -43,7 +43,7 @@
       <ListView fx:id="list" layoutX="299.0" layoutY="226.0" onMouseClicked="#goStationDetail" prefHeight="201.0" prefWidth="398.0" />
       <Pane layoutX="279.0" layoutY="106.0" prefHeight="98.0" prefWidth="438.0">
          <children>
-            <Button id="round-red" layoutX="313.0" layoutY="58.0" mnemonicParsing="false" onAction="#goRentBikeScreen" prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: #3cc985; -fx-border-radius: 5px;" stylesheets="@../resources/styles/style.css" text="Rent bike" />
+            <Button id="round-red" layoutX="313.0" layoutY="58.0" mnemonicParsing="false" onAction="#goRentBikeScreen" prefHeight="25.0" prefWidth="76.0" style="-fx-background-color: #3cc985; -fx-border-radius: 5px;" stylesheets="@../resources/styles/style.css" text="Rent bike" />
             <TextField fx:id="textField" layoutX="143.0" layoutY="60.0" />
             <Text fill="#108a34" layoutX="34.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Insert barcode">
                <font>
