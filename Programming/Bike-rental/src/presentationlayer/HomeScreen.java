@@ -1,6 +1,9 @@
 package presentationlayer;
 
+import applicationlayer.BarcodeController;
 import applicationlayer.HomeController;
+import applicationlayer.RentBikeController;
+import datalayer.model.Bike;
 import datalayer.model.BriefStation;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -10,6 +13,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Text;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -21,6 +25,16 @@ public class HomeScreen {
 
     @FXML
     TextField textField;
+
+    @FXML
+    Text invalidBarcode;
+
+    public int getUserId() {
+        return userId;
+    }
+
+    int userId = 1;
+
 
     @FXML
     public void initialize() {
@@ -39,9 +53,25 @@ public class HomeScreen {
     }
 
     @FXML
-    public void goRentBikeScreen(ActionEvent e) {
-        String tmp = textField.getText();
-        System.out.println("Hello " + tmp);
+    public void goRentBikeScreen(ActionEvent e) throws IOException {
+        String barCode = textField.getText();
+        BarcodeController barcodeController = new BarcodeController();
+        boolean check = barcodeController.validateBarcode(barCode);
+        if(check == false) {
+            invalidBarcode.setText("Invalid Barcode");
+        }
+        else {
+            RentBikeController rentBikeController = new RentBikeController();
+            Bike bike = rentBikeController.requestBike(barCode);
+            if (bike == null) {
+                invalidBarcode.setText("Invalid Barcode");
+            }
+            else {
+                App.getInstance().display_RentBikeScreen(bike);
+            }
+
+        }
+
     }
 
 

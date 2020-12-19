@@ -11,7 +11,7 @@ import java.io.IOException;
 
 public class App extends Application {
 
-
+    public static int userID = 1;
     private static Parent root;
     private static App instance;
     private static Stage guiStage;
@@ -65,13 +65,25 @@ public class App extends Application {
     }
 
 
-    public void display_RentBikeScreen() {
-
+    public void display_RentBikeScreen(Bike bike) throws IOException {
+        FXMLLoader loader = new FXMLLoader(instance.getClass().getResource("RentBikeScreen.fxml"));
+        root = loader.load();
+        RentBikeScreen controller = loader.getController();
+        controller.initData(bike);
+        Scene scene = new Scene(root);
+        guiStage.setScene(scene);
+        guiStage.show();
     }
 
 
-    public void display_NotificationScreen() {
-
+    public void display_NotificationScreen(String result) throws IOException {
+        FXMLLoader loader = new FXMLLoader(instance.getClass().getResource("NotificationScreen.fxml"));
+        root = loader.load();
+        NotificationScreen controller = loader.getController();
+        controller.initData(result);
+        Scene scene = new Scene(root);
+        guiStage.setScene(scene);
+        guiStage.show();
     }
 
 
@@ -84,10 +96,6 @@ public class App extends Application {
 
     }
 
-
-    public void display_BikeRentedList () {
-
-    }
     public static App getInstance() {
         return instance;
     }
