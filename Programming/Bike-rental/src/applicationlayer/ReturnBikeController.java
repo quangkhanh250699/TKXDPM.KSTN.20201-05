@@ -55,7 +55,7 @@ public class ReturnBikeController {
             this.bikeRentedAccessor.update(newRentBike);
             TransactionHistory transactionHistory = makeTransactionHistory(
                     userId,
-                    bike,
+                    newRentBike,
                     paymentTransaction
             );
             transactionHistoryAccessor.save(transactionHistory);
