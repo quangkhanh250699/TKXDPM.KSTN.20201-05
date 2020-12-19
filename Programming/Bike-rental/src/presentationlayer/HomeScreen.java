@@ -75,7 +75,7 @@ public class HomeScreen {
     }
 
 
-    public void goRentedBikeScreen(ActionEvent actionEvent) {
-        //
+    public void goBikeRentedListScreen(ActionEvent actionEvent) throws IOException {
+        App.getInstance().display_BikeRentedListScreen(App.userID);
     }
 }
