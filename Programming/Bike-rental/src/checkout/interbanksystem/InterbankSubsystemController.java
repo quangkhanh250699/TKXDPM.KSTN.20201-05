@@ -52,12 +52,6 @@ public class InterbankSubsystemController {
     private PaymentTransaction makePaymentTransaction(JSONObject response) throws PaymentException, JSONException, ParseException {
         if (response == null)
             return null;
-        JSONObject transaction = response.getJSONObject("transaction");
-        CreditCard card = new CreditCard((String) transaction.get("cardCode"), (String) transaction.get("owner"),
-                (String) transaction.get("cvvCode"), (String) transaction.get("dateExpired"));
-        PaymentTransaction trans = new PaymentTransaction((int) transaction.get("amount"), card,
-                (String) transaction.get("transactionContent"), new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").parse((String) transaction.get("createdAt")));
-
         switch ((String) response.get("errorCode")) {
             case "00":
                 break;
@@ -78,6 +72,13 @@ public class InterbankSubsystemController {
             default:
                 throw new UnrecognizedException();
         }
+
+        JSONObject transaction = response.getJSONObject("transaction");
+        CreditCard card = new CreditCard((String) transaction.get("cardCode"), (String) transaction.get("owner"),
+                (String) transaction.get("cvvCode"), (String) transaction.get("dateExpired"));
+        PaymentTransaction trans = new PaymentTransaction((int) transaction.get("amount"), card,
+                (String) transaction.get("transactionContent"), new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").parse((String) transaction.get("createdAt")));
+
         return trans;
     }
 
