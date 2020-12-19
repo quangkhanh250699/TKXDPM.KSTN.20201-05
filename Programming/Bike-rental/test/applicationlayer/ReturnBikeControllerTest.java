@@ -28,7 +28,7 @@ class ReturnBikeControllerTest {
     void requestReturnBike() {
         int userId = 1;
         CreditCard creditCard = new CreditCard("118131_group5_2020", "Group 5", "296", "1125");
-        RentedBike rentedBike = (new BikeRentedAccessor()).get(1);
+        RentedBike rentedBike = (new BikeRentedAccessor()).get(30);
         rentedBike.setStatus(false);
 
         assertEquals("You returned bike successfully!",

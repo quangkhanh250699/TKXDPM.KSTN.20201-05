@@ -49,6 +49,7 @@ public class RentBikeController {
             Date date  = new Date();
             Timestamp startTime = new Timestamp(date.getTime());
             int rentId = -1;
+            bike.setStatus(true);
             RentedBike rentedBike = new RentedBike(
                     bike.getBikeId(),
                     bike.getBikeName(),

@@ -5,15 +5,15 @@ import checkout.InterbankInterface;
 import checkout.InterbankSubsystem;
 import checkout.PaymentTransaction;
 import checkout.exception.PaymentException;
+import datalayer.acessor.BikeAccessor;
 import datalayer.acessor.BikeRentedAccessor;
 import datalayer.acessor.TransactionHistoryAccessor;
-import datalayer.model.RentedBike;
-import datalayer.model.Station;
-import datalayer.model.TransactionHistory;
+import datalayer.model.*;
 
 import java.io.IOException;
 import java.sql.Timestamp;
 import java.text.ParseException;
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 public class ReturnBikeController {
@@ -33,6 +33,9 @@ public class ReturnBikeController {
     }
 
     public String requestReturnBike(int userId, RentedBike bike, CreditCard creditCard, Timestamp endTime) {
+        if (endTime == null) {
+            endTime = new Timestamp((new Date()).getTime());
+        }
         int debit = (int) this.calculator.getDebit(bike);
         int cost = (int) calculateCost(bike, endTime);
         int returnMoney = debit - cost;
@@ -59,6 +62,8 @@ public class ReturnBikeController {
                     paymentTransaction
             );
             transactionHistoryAccessor.save(transactionHistory);
+            Bike freeBike = BikeFactory.getInstance().getBikeById(bike.getBikeId());
+            freeBike.setStatus(false);
             return SUCCESS_REFUND;
         } catch (IOException e) {
             e.printStackTrace();

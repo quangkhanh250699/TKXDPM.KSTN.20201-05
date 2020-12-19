@@ -36,9 +36,9 @@ class RentBikeControllerTest {
 
     @Test
     void requestRentBike() {
-        Bike bike = (new BikeAccessor()).get(1);
+        Bike bike = (new BikeAccessor()).get(10);
         String notification = rentBikeController.requestRentBike(1, bike, card);
 
-        assertEquals("You transaction is successful!", notification);
+        assertEquals("Your transaction is successful!", notification);
     }
 }

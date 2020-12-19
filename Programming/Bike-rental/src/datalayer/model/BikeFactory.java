@@ -42,26 +42,6 @@ public class BikeFactory {
 
     public List<Bike> getBikeByStationId(int stationId){
         List<Bike> bikes = bikeAccessor.getBikeByStationId(stationId);
-        List<Bike> bikesInStation = new ArrayList<Bike>();
-        for(Bike bike: bikes){
-            if(!this.bikes.containsKey(bike.getBikeId())){
-                this.bikes.put(bike.getBikeId(), bike);
-            }
-            bikesInStation.add(this.bikes.get(bike.getBikeId()));
-        }
-        return bikesInStation;
+        return bikes;
     }
-
-//    public List<Bike> getBikeRentByUserId(int userId){
-//        List<Bike> bikes = bikeAccessor.getBikeRentByUserId(userId);
-//        List<Bike> bikesRentByUser = new ArrayList<Bike>();
-//        for(Bike bike: bikes){
-//            if(!this.bikes.containsKey(bike.getBikeId())){
-//                this.bikes.put(bike.getBikeId(), bike);
-//            }
-//            bikesRentByUser.add(this.bikes.get(bike.getBikeId()));
-//        }
-//        return bikesRentByUser;
-//    }
-
 }
