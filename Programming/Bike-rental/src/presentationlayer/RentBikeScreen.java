@@ -37,6 +37,11 @@ public class RentBikeScreen {
     }
 
     public void initData(Bike bike) {
+        /**
+         * Initialize the data of screen, detail information of bike user want to rent
+         *
+         * @param: Bike bike: bike user want to rent
+         */
         // Set bike for rentBikeScreen
         this.setBike(bike);
         // rent data
@@ -44,6 +49,12 @@ public class RentBikeScreen {
     }
 
     static void rentBikeData(Bike bike, ListView<String> list) {
+        /**
+         * rent detail information of bike to list view string
+         *
+         * @param: Bike bike: bike to view detail information
+         * @param: ListView<String> list: id of ListView in screen
+         */
         String bikeid = "Bike id: " + bike.getBikeId();
         String bikename = "Bike name:  " + bike.getBikeName();
         String pin = "Pin: " + bike.getPin();
@@ -59,11 +70,17 @@ public class RentBikeScreen {
     }
 
     public void goBack(ActionEvent actionEvent) throws IOException {
+        /**
+         * handle event when user click on back button, go back to home screen
+         */
         App.getInstance().display_HomeScreen();
     }
 
 
     public void goNotificationScreen(ActionEvent actionEvent) throws IOException {
+        /**
+         * Handle event when user click on confirm rent bike event, go to the notification screen
+         */
         // Get the data from user
         CreditCard creditCard = new CreditCard(cardCode.getText(), Owner.getText(),
         cvvCode.getText(), dateExpired.getText());
@@ -76,6 +93,9 @@ public class RentBikeScreen {
     }
 
     public void ResetDefaultValue(ActionEvent actionEvent) {
+        /**
+         * Handle event when user click on valid information button, fill in the default value of card
+         */
         // Get the data from user(fix)
         cardCode.setText("118131_group5_2020");
         Owner.setText("Group 5");

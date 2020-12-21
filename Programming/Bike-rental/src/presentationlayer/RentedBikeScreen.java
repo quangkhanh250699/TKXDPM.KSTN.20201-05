@@ -34,6 +34,11 @@ public class RentedBikeScreen {
     @FXML
     ListView list;
     public void initData(RentedBike rentedBike) {
+        /**
+         * Initialize data of the screen: detail information of rented bike, include start time, end time and cost
+         *
+         * @param: RentedBike rentedBike: rented bike to display information
+         */
         // Set rented bike
         this.setRentedBike(rentedBike);
 
@@ -63,10 +68,16 @@ public class RentedBikeScreen {
         list.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
     }
     public void goBack(ActionEvent actionEvent) throws IOException {
+        /**
+         * Handle event when user click on back button, go to bike rented list screen
+         */
         App.getInstance().display_BikeRentedListScreen(App.userID);
     }
 
     public void goReturnBikeScreen(ActionEvent e) throws IOException {
+        /**
+         * Handle event when user click on return bike button, go to return bike screen
+         */
         App.getInstance().display_ReturnBikeScreen(this.getRentedBike());
     }
 }

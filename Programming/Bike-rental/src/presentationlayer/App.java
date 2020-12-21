@@ -27,10 +27,18 @@ public class App extends Application {
 
 
     public static void main(String[] args) {
+        /**
+         * Main to start the bike rental management app
+         */
         System.out.println(System.getProperty("user.dir"));
         launch(args);
     }
     private void display(String Filepath) throws IOException {
+        /**
+         * Display the stage load from file fxml
+         *
+         * @param: String Filepath: file path to the fxml file
+         */
         FXMLLoader loader = new FXMLLoader(instance.getClass().getResource(Filepath));
         root = loader.load();
         Scene scene = new Scene(root);
@@ -39,6 +47,9 @@ public class App extends Application {
     }
 
     public  void display_HomeScreen() {
+        /**
+         *  Display Homescreen
+         */
         try {
             display("HomeScreen.fxml");
         } catch (IOException e) {
@@ -48,6 +59,11 @@ public class App extends Application {
 
 
     public static void display_StationDetailScreen(int id) throws IOException {
+        /**
+         * Display station detail screen with a specific id
+         *
+         * @param: int id: id of the station
+         */
         FXMLLoader loader = new FXMLLoader(instance.getClass().getResource("StationDetailScreen.fxml"));
         root = loader.load();
         StationDetailScreen controller = loader.getController();
@@ -58,6 +74,12 @@ public class App extends Application {
     }
 
     public void display_ViewBikeScreen(int stationId, Bike bike) throws IOException {
+        /**
+         * Display the information detail of bike screen
+         *
+         * @param: Bike bike: the bike to display the information
+         * @param: int stationid: id of the station contains that bike
+         */
         FXMLLoader loader = new FXMLLoader(instance.getClass().getResource("ViewBikeScreen.fxml"));
         root = loader.load();
         ViewBikeScreen controller = loader.getController();
@@ -69,6 +91,11 @@ public class App extends Application {
 
 
     public void display_RentBikeScreen(Bike bike) throws IOException {
+        /**
+         * Display information of the bike user want to rent and fill in place for card information
+         *
+         * @param: Bike bike: the bike user rent
+         */
         FXMLLoader loader = new FXMLLoader(instance.getClass().getResource("RentBikeScreen.fxml"));
         root = loader.load();
         RentBikeScreen controller = loader.getController();
@@ -80,6 +107,11 @@ public class App extends Application {
 
 
     public void display_NotificationScreen(String result) throws IOException {
+        /**
+         * Display notification screen, the result of rent or return bike
+         *
+         * @param: String result: result of the rent or return bike usecase
+         */
         FXMLLoader loader = new FXMLLoader(instance.getClass().getResource("NotificationScreen.fxml"));
         root = loader.load();
         NotificationScreen controller = loader.getController();
@@ -91,6 +123,11 @@ public class App extends Application {
 
 
     public void display_ReturnBikeScreen (RentedBike rentedBike) throws IOException {
+        /**
+         * Display return bike screen, where user fill in card information to return bike
+         *
+         * @param: Rented bike: rented bike: the rented bike of the previos sreen, this param is used for go back button
+         */
         FXMLLoader loader = new FXMLLoader(instance.getClass().getResource("ReturnBikeScreen.fxml"));
         root = loader.load();
         ReturnBikeScreen controller = loader.getController();
@@ -103,6 +140,11 @@ public class App extends Application {
 
 
     public void display_RentedBikeScreen(RentedBike rentedBike) throws IOException {
+        /**
+         * Display detail information of rented bike, include information of bike, start time, end time, cost
+         *
+         * @param: RentedBike rentedBike: the rented bike to display information
+         */
         FXMLLoader loader = new FXMLLoader(instance.getClass().getResource("RentedBikeScreen.fxml"));
         root = loader.load();
         RentedBikeScreen controller = loader.getController();
@@ -113,6 +155,11 @@ public class App extends Application {
     }
 
     public void display_BikeRentedListScreen(int userID) throws IOException {
+        /**
+         * Display rented list bike screen of the user
+         *
+         * @param: int userID: id of user
+         */
         FXMLLoader loader = new FXMLLoader(instance.getClass().getResource("BikeRentedListScreen.fxml"));
         root = loader.load();
         BikeRentedListScreen controller = loader.getController();

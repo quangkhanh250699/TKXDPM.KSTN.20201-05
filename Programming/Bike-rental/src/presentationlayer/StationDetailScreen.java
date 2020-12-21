@@ -30,10 +30,18 @@ public class StationDetailScreen {
 
 
     public void goBack(ActionEvent actionEvent) {
+        /**
+         * Handle event when user click back button, go back to home screen
+         */
         App.getInstance().display_HomeScreen();
     }
 
     public void initData(int stationID) {
+        /**
+         * Initialize data of screen, the list bike of station
+         *
+         * @param: int stationID: id of station
+         */
         // set stationid of stationdetail screen
         this.setStationID(stationID);
 
@@ -49,6 +57,9 @@ public class StationDetailScreen {
 
 
     public void goViewBikeScreen(MouseEvent mouseEvent) throws IOException {
+        /**
+         * Handle event when user click on a bike in list bike of station, go to the detail bike information screen
+         */
         Bike bike = list.getSelectionModel().getSelectedItem();
         App.getInstance().display_ViewBikeScreen(this.getStationID(), bike);
     }
