@@ -38,6 +38,9 @@ public class HomeScreen {
 
     @FXML
     public void initialize() {
+        /**
+         * Initialize data of home screen: list of station
+         */
         HomeController homeController = new HomeController();
         ArrayList<BriefStation> stations = (ArrayList<BriefStation>) homeController.getBriefStations();
         ObservableList<BriefStation> items =  FXCollections.observableArrayList(stations);
@@ -47,6 +50,9 @@ public class HomeScreen {
 
 
     public void goStationDetail(MouseEvent e) throws IOException {
+        /**
+         * Handle event when user click on station, go to the station detail screen of choosen station
+         */
         BriefStation briefStation = list.getSelectionModel().getSelectedItem();
         int stationId = briefStation.getStationId();
         App.getInstance().display_StationDetailScreen(stationId);
@@ -54,6 +60,10 @@ public class HomeScreen {
 
     @FXML
     public void goRentBikeScreen(ActionEvent e) throws IOException {
+        /**
+         * Handle event when user click on rent bike button, process the bar code
+         * and return the bike information user want to rent
+         */
         String barCode = textField.getText();
         BarcodeController barcodeController = new BarcodeController();
         boolean check = barcodeController.validateBarcode(barCode);
@@ -76,6 +86,9 @@ public class HomeScreen {
 
 
     public void goBikeRentedListScreen(ActionEvent actionEvent) throws IOException {
+        /**
+         * Handle event when user click on view rented bike button, go to the bike rented list screen
+         */
         App.getInstance().display_BikeRentedListScreen(App.userID);
     }
 }

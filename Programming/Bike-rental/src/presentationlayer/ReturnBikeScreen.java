@@ -32,14 +32,26 @@ public class ReturnBikeScreen {
     }
 
     public void initData(RentedBike rentedBike) {
+        /**
+         * Initialize data of screen, set the rentedBike properties of screen. This property is used for
+         * going back to rented bike screen
+         *
+         * @param: Rentedbike rentedBike: bike of previous screen
+         */
         this.setRentedBike(rentedBike);
     }
 
     public void goBack(ActionEvent actionEvent) throws IOException {
+        /**
+         * Handle event when user click on back button, go back to rented bike screen
+         */
         App.getInstance().display_RentedBikeScreen(this.getRentedBike());
     }
 
     public void goNotificationScreen(ActionEvent actionEvent) throws IOException {
+        /**
+         * Handle event when user click on return bike button, go to notification screen
+         */
         // Get the data from user
         CreditCard creditCard = new CreditCard(cardCode.getText(), Owner.getText(),
                 cvvCode.getText(), dateExpired.getText());
@@ -53,6 +65,9 @@ public class ReturnBikeScreen {
     }
 
     public void ResetDefaultValue(ActionEvent actionEvent) {
+        /**
+         * Handle event when user click on valid information button, fill in the default value of card
+         */
         // Get the data from user(fix)
         cardCode.setText("118131_group5_2020");
         Owner.setText("Group 5");

@@ -25,18 +25,24 @@ public class ViewBikeScreen {
 
     int stationId;
 
-    @FXML
-    public void initialize() {
-        //
-    }
 
     @FXML
     TextField textField;
     public void goBack(ActionEvent actionEvent) throws IOException {
+        /**
+         * Handle event when user click on back button, go back to station detail screen
+         */
         App.getInstance().display_StationDetailScreen(this.getStationId());
     }
 
     public void initData(int stationId, Bike bike) {
+        /**
+         * Initialize data of screen: detail information of the bike
+         *
+         * @param: Bike bike: bike to display detail screen
+         * @param: int stationId: id of the station of that bike, this param used for going back to station
+         * detail screen
+         */
         // Set stationId to goback
         this.setStationId(stationId);
 
