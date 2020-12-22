@@ -16,8 +16,14 @@ import java.text.ParseException;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * This class controls flow of system when user returns bike.
+ */
 public class ReturnBikeController {
 
+    /**
+     * String returned when user rent bike successfully.
+     */
     private String SUCCESS_REFUND = "You returned bike successfully!";
 
     private CostComputer calculator;
@@ -32,6 +38,14 @@ public class ReturnBikeController {
         this.transactionHistoryAccessor = new TransactionHistoryAccessor();
     }
 
+    /**
+     * return return bike rented by user
+     * @param userId id of user
+     * @param bike user's rented bike
+     * @param creditCard credit card info
+     * @param endTime time that user returns bike
+     * @return
+     */
     public String requestReturnBike(int userId, RentedBike bike, CreditCard creditCard, Timestamp endTime) {
         if (endTime == null) {
             endTime = new Timestamp((new Date()).getTime());
@@ -75,6 +89,12 @@ public class ReturnBikeController {
         return "";
     }
 
+    /**
+     * calculate cost of bike rented to specific time
+     * @param rentedBike bike rented by user
+     * @param endTime the time that user rent bike to
+     * @return
+     */
     public float calculateCost(RentedBike rentedBike, Timestamp endTime) {
         return this.calculator.checkout(rentedBike, endTime);
     }

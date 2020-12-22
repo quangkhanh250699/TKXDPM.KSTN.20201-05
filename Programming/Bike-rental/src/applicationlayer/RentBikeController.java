@@ -18,6 +18,9 @@ import java.util.Date;
 import java.sql.Timestamp;
 import java.text.ParseException;
 
+/**
+ * This class controls flow of system when user rents bike.
+ */
 public class RentBikeController {
 
     private final String SUCCESS_NOTIFICATION = "Your transaction is successful!";
@@ -35,11 +38,23 @@ public class RentBikeController {
         this.costComputer = new SimpleCostCalculator();
     }
 
+    /**
+     * get bike for user
+     * @param barcode barcode in the bike
+     * @return bike matched with barcode
+     */
     public Bike requestBike(String barcode) {
         int bikeId = this.barcodeProcessor.processBarcode(barcode);
         return bikeAccessor.get(bikeId);
     }
 
+    /**
+     * Request rent bike for user
+     * @param userId id of user
+     * @param bike the bike wanted to rent by user
+     * @param creditCard credit card of user
+     * @return notification string
+     */
     public String requestRentBike(int userId, Bike bike, CreditCard creditCard) {
         if (bike.isStatus())
             return BIKE_IS_RENTED;
