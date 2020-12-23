@@ -4,6 +4,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.text.Text;
 
+import java.io.IOException;
+
 public class NotificationScreen {
     @FXML
     Text result;
@@ -16,7 +18,7 @@ public class NotificationScreen {
          */
         this.result.setText(result);
     }
-    public void goBack(ActionEvent actionEvent) {
+    public void goBack(ActionEvent actionEvent) throws IOException {
         /**
          * Handle event when user click on go home button, go to home screen
          */

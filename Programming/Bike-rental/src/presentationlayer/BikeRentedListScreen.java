@@ -31,7 +31,7 @@ public class BikeRentedListScreen {
         list.setItems(items);
         list.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
     }
-    public void goBack(ActionEvent actionEvent) {
+    public void goBack(ActionEvent actionEvent) throws IOException {
         /**
          * Handle event when user click on back button, go back to home screen
          */

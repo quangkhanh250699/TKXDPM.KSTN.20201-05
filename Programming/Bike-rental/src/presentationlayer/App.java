@@ -33,28 +33,17 @@ public class App extends Application {
         System.out.println(System.getProperty("user.dir"));
         launch(args);
     }
-    private void display(String Filepath) throws IOException {
-        /**
-         * Display the stage load from file fxml
-         *
-         * @param: String Filepath: file path to the fxml file
-         */
-        FXMLLoader loader = new FXMLLoader(instance.getClass().getResource(Filepath));
-        root = loader.load();
-        Scene scene = new Scene(root);
-        guiStage.setScene(scene);
-        guiStage.show();
-    }
 
-    public  void display_HomeScreen() {
+    public  void display_HomeScreen() throws IOException {
         /**
          *  Display Homescreen
          */
-        try {
-            display("HomeScreen.fxml");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        FXMLLoader loader = new FXMLLoader(instance.getClass().getResource("Homescreen.fxml"));
+        root = loader.load();
+        Scene scene = new Scene(root);
+        guiStage.setTitle("Home");
+        guiStage.setScene(scene);
+        guiStage.show();
     }
 
 
@@ -69,6 +58,7 @@ public class App extends Application {
         StationDetailScreen controller = loader.getController();
         controller.initData(id);
         Scene scene = new Scene(root);
+        guiStage.setTitle("Station detail");
         guiStage.setScene(scene);
         guiStage.show();
     }
@@ -85,6 +75,7 @@ public class App extends Application {
         ViewBikeScreen controller = loader.getController();
         controller.initData(stationId, bike);
         Scene scene = new Scene(root);
+        guiStage.setTitle("View bike detail");
         guiStage.setScene(scene);
         guiStage.show();
     }
@@ -101,6 +92,7 @@ public class App extends Application {
         RentBikeScreen controller = loader.getController();
         controller.initData(bike);
         Scene scene = new Scene(root);
+        guiStage.setTitle("Rent bike");
         guiStage.setScene(scene);
         guiStage.show();
     }
@@ -117,6 +109,7 @@ public class App extends Application {
         NotificationScreen controller = loader.getController();
         controller.initData(result);
         Scene scene = new Scene(root);
+        guiStage.setTitle("Notification");
         guiStage.setScene(scene);
         guiStage.show();
     }
@@ -133,6 +126,7 @@ public class App extends Application {
         ReturnBikeScreen controller = loader.getController();
         controller.initData(rentedBike);
         Scene scene = new Scene(root);
+        guiStage.setTitle("Return bike");
         guiStage.setScene(scene);
         guiStage.show();
     }
@@ -150,6 +144,7 @@ public class App extends Application {
         RentedBikeScreen controller = loader.getController();
         controller.initData(rentedBike);
         Scene scene = new Scene(root);
+        guiStage.setTitle("Rented bike");
         guiStage.setScene(scene);
         guiStage.show();
     }
@@ -165,6 +160,7 @@ public class App extends Application {
         BikeRentedListScreen controller = loader.getController();
         controller.initData(userID);
         Scene scene = new Scene(root);
+        guiStage.setTitle("Bike rented list");
         guiStage.setScene(scene);
         guiStage.show();
     }

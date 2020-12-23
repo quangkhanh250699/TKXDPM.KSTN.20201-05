@@ -29,7 +29,7 @@ public class StationDetailScreen {
     }
 
 
-    public void goBack(ActionEvent actionEvent) {
+    public void goBack(ActionEvent actionEvent) throws IOException {
         /**
          * Handle event when user click back button, go back to home screen
          */
