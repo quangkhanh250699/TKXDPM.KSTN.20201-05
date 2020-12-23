@@ -17,7 +17,9 @@ public class CategoryAccessor extends DataAccessor<Category>{
         Category category = null;
         try{
             ResultSet rs = query(q);
-            rs.next();
+            if(rs.next() == false){
+                return null;
+            }
             category = new Category(id, rs.getString("name"), rs.getString("description"),
                     rs.getFloat("cost_per_hour"), rs.getInt("n_pedals"), rs.getInt("n_seats"));
         }catch(SQLException se){

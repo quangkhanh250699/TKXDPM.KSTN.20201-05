@@ -15,7 +15,9 @@ public class BikeRentedAccessor extends DataAccessor<RentedBike>{
         try{
             ResultSet rs = query(q);
             BikeFactory bikeFactory = BikeFactory.getInstance();
-            rs.next();
+            if(rs.next() == false){
+                return null;
+            }
             Bike bike = bikeFactory.getBikeById(rs.getInt("bikeId"));
             rentedBike = new RentedBike(bike.getBikeId(), bike.getBikeName(), bike.getStationId(),
                     bike.getPin(), bike.isStatus(), bike.getCategory(), rs.getInt("userId"),
