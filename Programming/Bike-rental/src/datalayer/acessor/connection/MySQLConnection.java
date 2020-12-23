@@ -12,6 +12,10 @@ public class MySQLConnection implements DBConnection {
 
     private MySQLConnection(){}
 
+    /**
+     * Use singleton to create only one instance of MySQLConnection
+     * @return
+     */
     public static MySQLConnection getInstance(){
         if(instance == null){
             instance = new MySQLConnection();
@@ -27,6 +31,12 @@ public class MySQLConnection implements DBConnection {
         this.conn = conn;
     }
 
+    /**
+     * This function will create the Statement of connection,
+     * run the query Select to database
+     * @param q: the query in type String
+     * @return result of query
+     */
     @Override
     public ResultSet query(String q) {
 
@@ -48,6 +58,11 @@ public class MySQLConnection implements DBConnection {
         return rs;
     }
 
+    /**
+     * This function will create the Statement of connection,
+     * run the query Delete to database
+     * @param q: the query in type String
+     */
     @Override
     public void execute(String q) {
         try{
@@ -63,6 +78,11 @@ public class MySQLConnection implements DBConnection {
         return;
     }
 
+    /**
+     * This function will create the Statement of connection,
+     * run the query Update or Insert to database
+     * @param q: the query in type String
+     */
     @Override
     public void executeUpdate(String q) {
         try{

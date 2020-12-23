@@ -16,6 +16,10 @@ public class ConnectionFactory {
     static final String USER = "guest";
     static final String PASS = "guest";
 
+    /**
+     * Create connection to mysql server
+     * @return connection
+     */
     public DBConnection getDBConnection(){
         MySQLConnection mySQLConnection = MySQLConnection.getInstance();
         if(mySQLConnection.getConn() != null){

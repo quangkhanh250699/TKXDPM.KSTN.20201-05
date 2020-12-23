@@ -16,6 +16,11 @@ public class CategoryFactory {
 
     private CategoryFactory(){}
 
+    /**
+     * We use Singleton to create only one object of CategoryFactory,
+     * cause CategoryFactory has "categories" map the id of Category object to Category object
+     * @return
+     */
     public static CategoryFactory getInstance(){
         if(instance == null){
             instance = new CategoryFactory();
@@ -23,6 +28,13 @@ public class CategoryFactory {
         return instance;
     }
 
+    /**
+     * Use this function instead of CategoryAccessor.get()
+     * Select the table "category" in database
+     * Get Category object by id, and save it to "categories",
+     * @param categoryId
+     * @return object of Category
+     */
     public Category getCategoryById(int categoryId){
         if(!categories.containsKey(categoryId)){
 
