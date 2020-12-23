@@ -1,0 +1,13 @@
+Để cài đặt hệ thống cần:
+1. Phần cứng:
+Máy tính tối thiểu 4GB RAM, cài hệ điều hành window hoặc ubuntu
+2. Phần mềm:
+IDE Intellij
+Cài đặt máy ảo java, java15
+Một số thư viện cần có: javaFX11, mysql-connector-java-5.1.49
+Dùng maven trong intelji add các thư viện: org.apache.httpcomponents:httpclient:4.3-alpha1, org.json:json:20201115, org.junit.jupiter:junit-jupiter:5.4.2
+Add VM-option: --module-path /path/to/javafx/sdk --add-modules javafx.controls,javafx.fxml
+
+3. Database
+Cần cài đặt mysql server, mysql workbench
+Chạy file .sql 
