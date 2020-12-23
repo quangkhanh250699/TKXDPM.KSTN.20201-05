@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"applicationlayer"},{"l":"barcode"},{"l":"checkout"},{"l":"checkout.exception"},{"l":"checkout.interbanksystem"},{"l":"datalayer.acessor"},{"l":"datalayer.acessor.connection"},{"l":"datalayer.model"},{"l":"presentationlayer"},{"l":"sample"}];updateSearchResults();

@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.Icon?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TitledPane animated="false" prefHeight="22.0" prefWidth="640.0" text="Home Screen" />
+      <AnchorPane prefHeight="89.0" prefWidth="1366.0">
+         <children>
+            <TextArea layoutX="206.0" layoutY="25.0" prefHeight="41.0" prefWidth="519.0" />
+            <ImageView fitHeight="62.0" fitWidth="74.0" layoutX="61.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" scaleX="2.0">
+               <image>
+                  <Image url="@../../../../../home/quangkhanh/Pictures/angoc.jpg" />
+               </image>
+            </ImageView>
+            <SplitMenuButton layoutX="822.0" layoutY="26.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="110.0" text="Search">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Action 1" />
+                <MenuItem mnemonicParsing="false" text="Action 2" />
+              </items>
+            </SplitMenuButton>
+            <Icon content="ACCOUNT_BALANCE_WALLET" layoutX="1058.0" layoutY="31.0" prefHeight="31.0" prefWidth="66.0" />
+         </children>
+      </AnchorPane>
+      <Pane prefHeight="650.0" prefWidth="1366.0">
+         <children>
+            <SplitPane dividerPositions="0.3333333333333333, 0.678391959798995" layoutX="58.0" layoutY="26.0" orientation="VERTICAL" prefHeight="599.0" prefWidth="353.0">
+              <items>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <left>
+                        <Pane prefHeight="191.0" prefWidth="185.0" style="-fx-background-color: pink;" BorderPane.alignment="CENTER">
+                           <children>
+                              <ImageView fitHeight="162.0" fitWidth="138.0" layoutX="24.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../home/quangkhanh/Pictures/violet_evergarden_by_miura.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                     </left>
+                     <right>
+                        <Pane prefHeight="191.0" prefWidth="166.0" style="-fx-background-color: green;" BorderPane.alignment="CENTER">
+                           <children>
+                              <Pane layoutX="20.0" layoutY="59.0" prefHeight="118.0" prefWidth="134.0" style="-fx-background-color: pink;">
+                                 <children>
+                                    <Pane layoutX="9.0" layoutY="4.0" prefHeight="21.0" prefWidth="102.0" style="-fx-background-color: yellow;">
+                                       <children>
+                                          <Text layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price" wrappingWidth="44.201820373535156" />
+                                          <TextField layoutX="38.0" layoutY="2.0" prefHeight="25.0" prefWidth="34.0" text="\$10">
+                                             <font>
+                                                <Font size="9.0" />
+                                             </font>
+                                          </TextField>
+                                       </children>
+                                    </Pane>
+                                    <Pane layoutX="9.0" layoutY="25.0" prefHeight="21.0" prefWidth="102.0" style="-fx-background-color: yellow;">
+                                       <children>
+                                          <Text layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avail" wrappingWidth="44.201820373535156" />
+                                          <TextField layoutX="38.0" layoutY="2.0" prefHeight="25.0" prefWidth="76.0" text="20">
+                                             <font>
+                                                <Font size="9.0" />
+                                             </font>
+                                          </TextField>
+                                       </children>
+                                    </Pane>
+                                    <Button layoutX="39.0" layoutY="79.0" mnemonicParsing="false" text="Add " />
+                                 </children>
+                              </Pane>
+                              <TextField layoutX="22.0" layoutY="14.0" prefHeight="31.0" prefWidth="131.0" promptText="Book Name" style="-fx-background-color: pink;" text="Book Name" />
+                           </children>
+                        </Pane>
+                     </right>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <left>
+                        <Pane prefHeight="191.0" prefWidth="185.0" style="-fx-background-color: pink;" BorderPane.alignment="CENTER">
+                           <children>
+                              <ImageView fitHeight="162.0" fitWidth="138.0" layoutX="24.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../home/quangkhanh/Pictures/violet_evergarden_by_miura.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                     </left>
+                     <right>
+                        <Pane prefHeight="191.0" prefWidth="166.0" style="-fx-background-color: green;" BorderPane.alignment="CENTER">
+                           <children>
+                              <Pane layoutX="20.0" layoutY="59.0" prefHeight="118.0" prefWidth="134.0" style="-fx-background-color: pink;">
+                                 <children>
+                                    <Pane layoutX="9.0" layoutY="4.0" prefHeight="21.0" prefWidth="102.0" style="-fx-background-color: yellow;">
+                                       <children>
+                                          <Text layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price" wrappingWidth="44.201820373535156" />
+                                          <TextField layoutX="38.0" layoutY="2.0" prefHeight="25.0" prefWidth="34.0" text="\$10">
+                                             <font>
+                                                <Font size="9.0" />
+                                             </font>
+                                          </TextField>
+                                       </children>
+                                    </Pane>
+                                    <Pane layoutX="9.0" layoutY="25.0" prefHeight="21.0" prefWidth="102.0" style="-fx-background-color: yellow;">
+                                       <children>
+                                          <Text layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avail" wrappingWidth="44.201820373535156" />
+                                          <TextField layoutX="38.0" layoutY="2.0" prefHeight="25.0" prefWidth="76.0" text="20">
+                                             <font>
+                                                <Font size="9.0" />
+                                             </font>
+                                          </TextField>
+                                       </children>
+                                    </Pane>
+                                    <Button layoutX="39.0" layoutY="79.0" mnemonicParsing="false" text="Add " />
+                                 </children>
+                              </Pane>
+                              <TextField layoutX="22.0" layoutY="14.0" prefHeight="31.0" prefWidth="131.0" promptText="Book Name" style="-fx-background-color: pink;" text="Book Name" />
+                           </children>
+                        </Pane>
+                     </right>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <left>
+                        <Pane prefHeight="191.0" prefWidth="185.0" style="-fx-background-color: pink;" BorderPane.alignment="CENTER">
+                           <children>
+                              <ImageView fitHeight="162.0" fitWidth="138.0" layoutX="24.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../home/quangkhanh/Pictures/violet_evergarden_by_miura.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                     </left>
+                     <right>
+                        <Pane prefHeight="191.0" prefWidth="166.0" style="-fx-background-color: green;" BorderPane.alignment="CENTER">
+                           <children>
+                              <Pane layoutX="20.0" layoutY="59.0" prefHeight="118.0" prefWidth="134.0" style="-fx-background-color: pink;">
+                                 <children>
+                                    <Pane layoutX="9.0" layoutY="4.0" prefHeight="21.0" prefWidth="102.0" style="-fx-background-color: yellow;">
+                                       <children>
+                                          <Text layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price" wrappingWidth="44.201820373535156" />
+                                          <TextField layoutX="38.0" layoutY="2.0" prefHeight="25.0" prefWidth="34.0" text="\$10">
+                                             <font>
+                                                <Font size="9.0" />
+                                             </font>
+                                          </TextField>
+                                       </children>
+                                    </Pane>
+                                    <Pane layoutX="9.0" layoutY="25.0" prefHeight="21.0" prefWidth="102.0" style="-fx-background-color: yellow;">
+                                       <children>
+                                          <Text layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avail" wrappingWidth="44.201820373535156" />
+                                          <TextField layoutX="38.0" layoutY="2.0" prefHeight="25.0" prefWidth="76.0" text="20">
+                                             <font>
+                                                <Font size="9.0" />
+                                             </font>
+                                          </TextField>
+                                       </children>
+                                    </Pane>
+                                    <Button layoutX="39.0" layoutY="79.0" mnemonicParsing="false" text="Add " />
+                                 </children>
+                              </Pane>
+                              <TextField layoutX="22.0" layoutY="14.0" prefHeight="31.0" prefWidth="131.0" promptText="Book Name" style="-fx-background-color: pink;" text="Book Name" />
+                           </children>
+                        </Pane>
+                     </right>
+                  </BorderPane>
+              </items>
+            </SplitPane>
+            <SplitPane dividerPositions="0.3333333333333333, 0.678391959798995" layoutX="507.0" layoutY="26.0" orientation="VERTICAL" prefHeight="599.0" prefWidth="353.0">
+               <items>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <left>
+                        <Pane prefHeight="191.0" prefWidth="185.0" style="-fx-background-color: pink;" BorderPane.alignment="CENTER">
+                           <children>
+                              <ImageView fitHeight="162.0" fitWidth="138.0" layoutX="24.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../home/quangkhanh/Pictures/violet_evergarden_by_miura.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                     </left>
+                     <right>
+                        <Pane prefHeight="191.0" prefWidth="166.0" style="-fx-background-color: green;" BorderPane.alignment="CENTER">
+                           <children>
+                              <Pane layoutX="20.0" layoutY="59.0" prefHeight="118.0" prefWidth="134.0" style="-fx-background-color: pink;">
+                                 <children>
+                                    <Pane layoutX="9.0" layoutY="4.0" prefHeight="21.0" prefWidth="102.0" style="-fx-background-color: yellow;">
+                                       <children>
+                                          <Text layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price" wrappingWidth="44.201820373535156" />
+                                          <TextField layoutX="38.0" layoutY="2.0" prefHeight="25.0" prefWidth="34.0" text="\$10">
+                                             <font>
+                                                <Font size="9.0" />
+                                             </font>
+                                          </TextField>
+                                       </children>
+                                    </Pane>
+                                    <Pane layoutX="9.0" layoutY="25.0" prefHeight="21.0" prefWidth="102.0" style="-fx-background-color: yellow;">
+                                       <children>
+                                          <Text layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avail" wrappingWidth="44.201820373535156" />
+                                          <TextField layoutX="38.0" layoutY="2.0" prefHeight="25.0" prefWidth="76.0" text="20">
+                                             <font>
+                                                <Font size="9.0" />
+                                             </font>
+                                          </TextField>
+                                       </children>
+                                    </Pane>
+                                    <Button layoutX="39.0" layoutY="79.0" mnemonicParsing="false" text="Add " />
+                                 </children>
+                              </Pane>
+                              <TextField layoutX="22.0" layoutY="14.0" prefHeight="31.0" prefWidth="131.0" promptText="Book Name" style="-fx-background-color: pink;" text="Book Name" />
+                           </children>
+                        </Pane>
+                     </right>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <left>
+                        <Pane prefHeight="191.0" prefWidth="185.0" style="-fx-background-color: pink;" BorderPane.alignment="CENTER">
+                           <children>
+                              <ImageView fitHeight="162.0" fitWidth="138.0" layoutX="24.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../home/quangkhanh/Pictures/violet_evergarden_by_miura.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                     </left>
+                     <right>
+                        <Pane prefHeight="191.0" prefWidth="166.0" style="-fx-background-color: green;" BorderPane.alignment="CENTER">
+                           <children>
+                              <Pane layoutX="20.0" layoutY="59.0" prefHeight="118.0" prefWidth="134.0" style="-fx-background-color: pink;">
+                                 <children>
+                                    <Pane layoutX="9.0" layoutY="4.0" prefHeight="21.0" prefWidth="102.0" style="-fx-background-color: yellow;">
+                                       <children>
+                                          <Text layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price" wrappingWidth="44.201820373535156" />
+                                          <TextField layoutX="38.0" layoutY="2.0" prefHeight="25.0" prefWidth="34.0" text="\$10">
+                                             <font>
+                                                <Font size="9.0" />
+                                             </font>
+                                          </TextField>
+                                       </children>
+                                    </Pane>
+                                    <Pane layoutX="9.0" layoutY="25.0" prefHeight="21.0" prefWidth="102.0" style="-fx-background-color: yellow;">
+                                       <children>
+                                          <Text layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avail" wrappingWidth="44.201820373535156" />
+                                          <TextField layoutX="38.0" layoutY="2.0" prefHeight="25.0" prefWidth="76.0" text="20">
+                                             <font>
+                                                <Font size="9.0" />
+                                             </font>
+                                          </TextField>
+                                       </children>
+                                    </Pane>
+                                    <Button layoutX="39.0" layoutY="79.0" mnemonicParsing="false" text="Add " />
+                                 </children>
+                              </Pane>
+                              <TextField layoutX="22.0" layoutY="14.0" prefHeight="31.0" prefWidth="131.0" promptText="Book Name" style="-fx-background-color: pink;" text="Book Name" />
+                           </children>
+                        </Pane>
+                     </right>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <left>
+                        <Pane prefHeight="191.0" prefWidth="185.0" style="-fx-background-color: pink;" BorderPane.alignment="CENTER">
+                           <children>
+                              <ImageView fitHeight="162.0" fitWidth="138.0" layoutX="24.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../home/quangkhanh/Pictures/violet_evergarden_by_miura.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                     </left>
+                     <right>
+                        <Pane prefHeight="191.0" prefWidth="166.0" style="-fx-background-color: green;" BorderPane.alignment="CENTER">
+                           <children>
+                              <Pane layoutX="20.0" layoutY="59.0" prefHeight="118.0" prefWidth="134.0" style="-fx-background-color: pink;">
+                                 <children>
+                                    <Pane layoutX="9.0" layoutY="4.0" prefHeight="21.0" prefWidth="102.0" style="-fx-background-color: yellow;">
+                                       <children>
+                                          <Text layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price" wrappingWidth="44.201820373535156" />
+                                          <TextField layoutX="38.0" layoutY="2.0" prefHeight="25.0" prefWidth="34.0" text="\$10">
+                                             <font>
+                                                <Font size="9.0" />
+                                             </font>
+                                          </TextField>
+                                       </children>
+                                    </Pane>
+                                    <Pane layoutX="9.0" layoutY="25.0" prefHeight="21.0" prefWidth="102.0" style="-fx-background-color: yellow;">
+                                       <children>
+                                          <Text layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avail" wrappingWidth="44.201820373535156" />
+                                          <TextField layoutX="38.0" layoutY="2.0" prefHeight="25.0" prefWidth="76.0" text="20">
+                                             <font>
+                                                <Font size="9.0" />
+                                             </font>
+                                          </TextField>
+                                       </children>
+                                    </Pane>
+                                    <Button layoutX="39.0" layoutY="79.0" mnemonicParsing="false" text="Add " />
+                                 </children>
+                              </Pane>
+                              <TextField layoutX="22.0" layoutY="14.0" prefHeight="31.0" prefWidth="131.0" promptText="Book Name" style="-fx-background-color: pink;" text="Book Name" />
+                           </children>
+                        </Pane>
+                     </right>
+                  </BorderPane>
+               </items>
+            </SplitPane>
+            <SplitPane dividerPositions="0.3333333333333333, 0.678391959798995" layoutX="948.0" layoutY="26.0" orientation="VERTICAL" prefHeight="599.0" prefWidth="353.0">
+               <items>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <left>
+                        <Pane prefHeight="191.0" prefWidth="185.0" style="-fx-background-color: pink;" BorderPane.alignment="CENTER">
+                           <children>
+                              <ImageView fitHeight="162.0" fitWidth="138.0" layoutX="24.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../home/quangkhanh/Pictures/violet_evergarden_by_miura.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                     </left>
+                     <right>
+                        <Pane prefHeight="191.0" prefWidth="166.0" style="-fx-background-color: green;" BorderPane.alignment="CENTER">
+                           <children>
+                              <Pane layoutX="20.0" layoutY="59.0" prefHeight="118.0" prefWidth="134.0" style="-fx-background-color: pink;">
+                                 <children>
+                                    <Pane layoutX="9.0" layoutY="4.0" prefHeight="21.0" prefWidth="102.0" style="-fx-background-color: yellow;">
+                                       <children>
+                                          <Text layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price" wrappingWidth="44.201820373535156" />
+                                          <TextField layoutX="38.0" layoutY="2.0" prefHeight="25.0" prefWidth="34.0" text="\$10">
+                                             <font>
+                                                <Font size="9.0" />
+                                             </font>
+                                          </TextField>
+                                       </children>
+                                    </Pane>
+                                    <Pane layoutX="9.0" layoutY="25.0" prefHeight="21.0" prefWidth="102.0" style="-fx-background-color: yellow;">
+                                       <children>
+                                          <Text layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avail" wrappingWidth="44.201820373535156" />
+                                          <TextField layoutX="38.0" layoutY="2.0" prefHeight="25.0" prefWidth="76.0" text="20">
+                                             <font>
+                                                <Font size="9.0" />
+                                             </font>
+                                          </TextField>
+                                       </children>
+                                    </Pane>
+                                    <Button layoutX="39.0" layoutY="79.0" mnemonicParsing="false" text="Add " />
+                                 </children>
+                              </Pane>
+                              <TextField layoutX="22.0" layoutY="14.0" prefHeight="31.0" prefWidth="131.0" promptText="Book Name" style="-fx-background-color: pink;" text="Book Name" />
+                           </children>
+                        </Pane>
+                     </right>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <left>
+                        <Pane prefHeight="191.0" prefWidth="185.0" style="-fx-background-color: pink;" BorderPane.alignment="CENTER">
+                           <children>
+                              <ImageView fitHeight="162.0" fitWidth="138.0" layoutX="24.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../home/quangkhanh/Pictures/violet_evergarden_by_miura.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                     </left>
+                     <right>
+                        <Pane prefHeight="191.0" prefWidth="166.0" style="-fx-background-color: green;" BorderPane.alignment="CENTER">
+                           <children>
+                              <Pane layoutX="20.0" layoutY="59.0" prefHeight="118.0" prefWidth="134.0" style="-fx-background-color: pink;">
+                                 <children>
+                                    <Pane layoutX="9.0" layoutY="4.0" prefHeight="21.0" prefWidth="102.0" style="-fx-background-color: yellow;">
+                                       <children>
+                                          <Text layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price" wrappingWidth="44.201820373535156" />
+                                          <TextField layoutX="38.0" layoutY="2.0" prefHeight="25.0" prefWidth="34.0" text="\$10">
+                                             <font>
+                                                <Font size="9.0" />
+                                             </font>
+                                          </TextField>
+                                       </children>
+                                    </Pane>
+                                    <Pane layoutX="9.0" layoutY="25.0" prefHeight="21.0" prefWidth="102.0" style="-fx-background-color: yellow;">
+                                       <children>
+                                          <Text layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avail" wrappingWidth="44.201820373535156" />
+                                          <TextField layoutX="38.0" layoutY="2.0" prefHeight="25.0" prefWidth="76.0" text="20">
+                                             <font>
+                                                <Font size="9.0" />
+                                             </font>
+                                          </TextField>
+                                       </children>
+                                    </Pane>
+                                    <Button layoutX="39.0" layoutY="79.0" mnemonicParsing="false" text="Add " />
+                                 </children>
+                              </Pane>
+                              <TextField layoutX="22.0" layoutY="14.0" prefHeight="31.0" prefWidth="131.0" promptText="Book Name" style="-fx-background-color: pink;" text="Book Name" />
+                           </children>
+                        </Pane>
+                     </right>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <left>
+                        <Pane prefHeight="191.0" prefWidth="185.0" style="-fx-background-color: pink;" BorderPane.alignment="CENTER">
+                           <children>
+                              <ImageView fitHeight="162.0" fitWidth="138.0" layoutX="24.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../home/quangkhanh/Pictures/violet_evergarden_by_miura.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                     </left>
+                     <right>
+                        <Pane prefHeight="191.0" prefWidth="166.0" style="-fx-background-color: green;" BorderPane.alignment="CENTER">
+                           <children>
+                              <Pane layoutX="20.0" layoutY="59.0" prefHeight="118.0" prefWidth="134.0" style="-fx-background-color: pink;">
+                                 <children>
+                                    <Pane layoutX="9.0" layoutY="4.0" prefHeight="21.0" prefWidth="102.0" style="-fx-background-color: yellow;">
+                                       <children>
+                                          <Text layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price" wrappingWidth="44.201820373535156" />
+                                          <TextField layoutX="38.0" layoutY="2.0" prefHeight="25.0" prefWidth="34.0" text="\$10">
+                                             <font>
+                                                <Font size="9.0" />
+                                             </font>
+                                          </TextField>
+                                       </children>
+                                    </Pane>
+                                    <Pane layoutX="9.0" layoutY="25.0" prefHeight="21.0" prefWidth="102.0" style="-fx-background-color: yellow;">
+                                       <children>
+                                          <Text layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avail" wrappingWidth="44.201820373535156" />
+                                          <TextField layoutX="38.0" layoutY="2.0" prefHeight="25.0" prefWidth="76.0" text="20">
+                                             <font>
+                                                <Font size="9.0" />
+                                             </font>
+                                          </TextField>
+                                       </children>
+                                    </Pane>
+                                    <Button layoutX="39.0" layoutY="79.0" mnemonicParsing="false" text="Add " />
+                                 </children>
+                              </Pane>
+                              <TextField layoutX="22.0" layoutY="14.0" prefHeight="31.0" prefWidth="131.0" promptText="Book Name" style="-fx-background-color: pink;" text="Book Name" />
+                           </children>
+                        </Pane>
+                     </right>
+                  </BorderPane>
+               </items>
+            </SplitPane>
+         </children>
+      </Pane>
+   </children>
+</VBox>
