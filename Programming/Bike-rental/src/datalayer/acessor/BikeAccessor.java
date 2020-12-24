@@ -17,7 +17,9 @@ public class BikeAccessor extends DataAccessor<Bike>{
         Bike bike = null;
         try{
             ResultSet rs = query(q);
-            rs.next();
+            if(rs.next() == false){
+                return null;
+            }
             CategoryFactory categoryFactory = CategoryFactory.getInstance();
             Category category = categoryFactory.getCategoryById(rs.getInt("categoryId"));
             bike = new Bike(id, rs.getString("bike_name"), rs.getInt("stationId"),
@@ -106,6 +108,7 @@ public class BikeAccessor extends DataAccessor<Bike>{
                         " , stationId = " + bike.getStationId()+
                         " , pin = " + bike.getPin() +
                         " , status = " + (bike.isStatus() ? 1 : 0) +
+                        " , categoryId = " + bike.getCategory().getCategoryId() +
                         " WHERE bikeId = " + bike.getBikeId();
         System.out.println(q);
         try{

@@ -15,7 +15,9 @@ public class UserAccessor extends DataAccessor<User>{
         try{
             ResultSet rs = query(q);
             BikeRentedAccessor bikeRentedAccessor = new BikeRentedAccessor();
-            rs.next();
+            if(rs.next() == false){
+                return null;
+            }
             List<RentedBike> rentedBikes = bikeRentedAccessor.getBikeRentByUserId(id);
 
             user = new User(id, rs.getString("name"), rentedBikes);
