@@ -15,7 +15,9 @@ public class TransactionHistoryAccessor extends DataAccessor<TransactionHistory>
         TransactionHistory transactionHistory = null;
         try{
             ResultSet rs = query(q);
-            rs.next();
+            if(rs.next() == false){
+                return null;
+            }
             transactionHistory = new TransactionHistory(id, rs.getInt("userId"), rs.getFloat("total_payment"),
                     rs.getTimestamp("time"), rs.getString("bike_name"), rs.getFloat("rented_duration"));
 

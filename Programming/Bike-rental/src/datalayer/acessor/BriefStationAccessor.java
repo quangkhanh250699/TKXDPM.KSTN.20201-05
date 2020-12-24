@@ -15,7 +15,9 @@ public class BriefStationAccessor extends DataAccessor<BriefStation>{
         BriefStation briefStation = null;
         try{
             ResultSet rs = query(q);
-            rs.next();
+            if(rs.next() == false){
+                return null;
+            }
             briefStation = new BriefStation(id, rs.getString("station_name"),
                     rs.getString("image_path"));
 
