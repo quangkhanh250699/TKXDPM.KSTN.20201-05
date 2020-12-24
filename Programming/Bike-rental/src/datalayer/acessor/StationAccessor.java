@@ -17,7 +17,9 @@ public class StationAccessor extends DataAccessor<Station>{
             ResultSet rs = query(q);
             BikeFactory bikeFactory = BikeFactory.getInstance();
             List<Bike> bikes = bikeFactory.getBikeByStationId(id);
-            rs.next();
+            if(rs.next() == false){
+                return null;
+            }
             station = new Station(id, rs.getString("station_name"), rs.getString("address"),
                     rs.getString("image_path"), bikes);
 
